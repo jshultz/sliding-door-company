@@ -14,21 +14,26 @@
 		<td rowspan="8">
 			<img src="/assets/images/email-one/DYO_email-v3-1_02.jpg" width="65" height="997" alt=""></td>
 		<td>
-			<a href="http://www.slidingdoorco.com/showrooms"><img src="/assets/images/email-one/DYO_email-v3-1_03.jpg" width="96" height="45" alt=""></a> </td>
+			<a href="http://www.slidingdoorco.com/showrooms"><img src="/assets/images/email-one/DYO_email-v3-1_03.jpg"
+			                                                      width="96" height="45" alt=""></a></td>
 		<td>
-			<a href="http://www.slidingdoorco.com/help/contact"><img src="/assets/images/email-one/DYO_email-v3-1_04.jpg" width="81" height="45" alt=""></a>
-			</td>
+			<a href="http://www.slidingdoorco.com/help/contact"><img
+					src="/assets/images/email-one/DYO_email-v3-1_04.jpg" width="81" height="45" alt=""></a>
+		</td>
 		<td colspan="4">
 			<img src="/assets/images/email-one/DYO_email-v3-1_05.jpg" width="274" height="45" alt=""></td>
 		<td rowspan="2">
-			<a href="https://www.facebook.com/TheSlidingDoorCo"><img src="/assets/images/email-one/DYO_email-v3-1_06.jpg" width="28" height="46" alt=""></a>
-			</td>
+			<a href="https://www.facebook.com/TheSlidingDoorCo"><img
+					src="/assets/images/email-one/DYO_email-v3-1_06.jpg" width="28" height="46" alt=""></a>
+		</td>
 		<td rowspan="2">
-			<a href="http://twitter.com/#!/slidingdoorco"><img src="/assets/images/email-one/DYO_email-v3-1_07.jpg" width="24" height="46" alt=""></a>
-			</td>
+			<a href="http://twitter.com/#!/slidingdoorco"><img src="/assets/images/email-one/DYO_email-v3-1_07.jpg"
+			                                                   width="24" height="46" alt=""></a>
+		</td>
 		<td rowspan="2">
-			<a href="http://www.youtube.com/slidingdoorcompany/"><img src="/assets/images/email-one/DYO_email-v3-1_08.jpg" width="72" height="46" alt=""></a>
-			</td>
+			<a href="http://www.youtube.com/slidingdoorcompany/"><img
+					src="/assets/images/email-one/DYO_email-v3-1_08.jpg" width="72" height="46" alt=""></a>
+		</td>
 		<td rowspan="8">
 			<img src="/assets/images/email-one/DYO_email-v3-1_09.jpg" width="64" height="997" alt=""></td>
 	</tr>
@@ -48,12 +53,13 @@
 
 				<div style="width: 510px; margin: 0 20px; height: 100px;">
 					<p><?php echo 'firstname' ?>,</p>
+
 					<p>Thank you for designing your beautiful new closet doors with us. Your next
 						step is sharing the specs of your custom order with the showroom below for
 						more detailed pricing and options.</p>
 				</div>
 
-				<div style="width:50%; float: left">
+				<div style="width:240px; padding: 0 20px; float: left">
 
 					<h3>Your Design</h3>
 
@@ -67,7 +73,7 @@
 
 				</div>
 
-				<div style="width: 50%; float: right">
+				<div style="width:240px; padding: 0 20px; float: right">
 
 					<h3>Your Showroom</h3>
 
@@ -97,30 +103,34 @@
 		<td colspan="3">
 			<img src="/assets/images/email-one/DYO_email-v3-1_14.jpg" width="185" height="54" alt=""></td>
 		<td colspan="2">
-			<a href="http://slidingdoorco.us5.list-manage1.com/subscribe/post?u=8f352881da294a071db8b8ed5&id=2d9fbec01c&MERGE0=[EMAIL]&MERGE1=[FIRST]&MERGE2=[LAST]"><img src="/assets/images/email-one/DYO_email-v3-1_15.jpg" width="184" height="54" alt=""></a>
-			</td>
+			<a href="http://slidingdoorco.us5.list-manage1.com/subscribe/post?u=8f352881da294a071db8b8ed5&id=2d9fbec01c&MERGE0=[EMAIL]&MERGE1=[FIRST]&MERGE2=[LAST]"><img
+					src="/assets/images/email-one/DYO_email-v3-1_15.jpg" width="184" height="54" alt=""></a>
+		</td>
 		<td colspan="4">
 			<img src="/assets/images/email-one/DYO_email-v3-1_16.jpg" width="206" height="54" alt=""></td>
 	</tr>
 	<tr>
 		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_17.jpg')">
-			<div>
+			<div style=" width: 530px; padding: 0 20px;">
 				<p>
-					For additional information regarding details, options and special pricing to the trade, please contact
+					For additional information regarding details, options and special pricing to the trade, please
+					contact
 					(localshowroomaddress)@slidingdoorco.com
 				</p>
 			</div>
-			</td>
+		</td>
 	</tr>
 	<tr>
 		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_18.jpg')">
-		<div>
-			<p>
-				SIGN UP FOR THE LATEST EVENTS AND OFFERS | Unsubscribe
-			</p><p>
-				The Sliding Door Company | 20235 Bahama St. | Chatsworth, CA 91311 | slidingdoorco.com
-			</p>
-		</div>
+			<div style=" width: 530px; padding: 0 20px;">
+				<p>
+					SIGN UP FOR THE LATEST EVENTS AND OFFERS | Unsubscribe
+				</p>
+
+				<p>
+					The Sliding Door Company | 20235 Bahama St. | Chatsworth, CA 91311 | slidingdoorco.com
+				</p>
+			</div>
 		</td>
 	</tr>
 	<tr>
