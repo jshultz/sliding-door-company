@@ -248,3 +248,24 @@ DEBUG - 2013-08-16 07:37:26 --> UTF-8 Support Enabled
 DEBUG - 2013-08-16 07:37:26 --> URI Class Initialized
 DEBUG - 2013-08-16 07:37:26 --> Router Class Initialized
 ERROR - 2013-08-16 07:37:26 --> 404 Page Not Found --> favicon.ico
+DEBUG - 2013-08-16 11:09:00 --> Config Class Initialized
+DEBUG - 2013-08-16 11:09:00 --> Hooks Class Initialized
+DEBUG - 2013-08-16 11:09:00 --> Utf8 Class Initialized
+DEBUG - 2013-08-16 11:09:00 --> UTF-8 Support Enabled
+DEBUG - 2013-08-16 11:09:00 --> URI Class Initialized
+DEBUG - 2013-08-16 11:09:00 --> Router Class Initialized
+DEBUG - 2013-08-16 11:09:00 --> No URI present. Default controller set.
+DEBUG - 2013-08-16 11:09:00 --> Output Class Initialized
+DEBUG - 2013-08-16 11:09:00 --> Security Class Initialized
+DEBUG - 2013-08-16 11:09:00 --> Input Class Initialized
+DEBUG - 2013-08-16 11:09:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-16 11:09:00 --> Language Class Initialized
+DEBUG - 2013-08-16 11:09:00 --> Loader Class Initialized
+DEBUG - 2013-08-16 11:09:00 --> Helper loaded: form_helper
+DEBUG - 2013-08-16 11:09:00 --> Helper loaded: url_helper
+DEBUG - 2013-08-16 11:09:00 --> Helper loaded: email_helper
+DEBUG - 2013-08-16 11:09:00 --> Helper loaded: string_helper
+DEBUG - 2013-08-16 11:09:00 --> Database Driver Class Initialized
+ERROR - 2013-08-16 11:09:00 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: Access denied for user 'root'@'localhost' (using password: NO) /Users/jshultz/Sites/random/sliding-door-company/system/database/drivers/mysql/mysql_driver.php 91
+ERROR - 2013-08-16 11:09:00 --> Unable to connect to the database
+DEBUG - 2013-08-16 11:09:00 --> Language file loaded: language/english/db_lang.php
