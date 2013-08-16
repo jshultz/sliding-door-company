@@ -5,7 +5,7 @@
 </head>
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <!-- Save for Web Slices (DYO_email-v3-1) -->
-<table id="Table_01" width="704" height="1057" border="0" cellpadding="0" cellspacing="0">
+<table id="Table_01" width="704" height="1057" border="0" cellpadding="0" cellspacing="0" style="color: gray; font-size: 15px;">
 	<tr>
 		<td colspan="11">
 			<img src="/assets/images/email-one/DYO_email-v3-1_01.jpg" width="704" height="59" alt=""></td>
@@ -111,7 +111,7 @@
 	</tr>
 	<tr>
 		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_17.jpg')">
-			<div style=" width: 530px; padding: 0 20px;">
+			<div style=" width: 530px; padding: 0 20px; font-size: 12px; height: 51px">
 				<p>
 					For additional information regarding details, options and special pricing to the trade, please
 					contact
@@ -121,8 +121,8 @@
 		</td>
 	</tr>
 	<tr>
-		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_18.jpg')">
-			<div style=" width: 530px; padding: 0 20px;">
+		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_18.jpg'); height: 79px;">
+			<div style=" width: 530px; padding: 0 20px; font-size: 10px">
 				<p>
 					SIGN UP FOR THE LATEST EVENTS AND OFFERS | Unsubscribe
 				</p>
