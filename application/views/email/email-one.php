@@ -5,7 +5,10 @@
 </head>
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <!-- Save for Web Slices (DYO_email-v3-1) -->
-<table id="Table_01" width="704" height="1057" border="0" cellpadding="0" cellspacing="0" style="color: gray; font-size: 15px;">
+<style>
+	a {color: #BFD730; text-decoration: none; h3 {font-weight: 400;}}
+</style>
+<table id="Table_01" width="704" height="1057" border="0" cellpadding="0" cellspacing="0" style="color: #939598; font-size: 15px;">
 	<tr>
 		<td colspan="11">
 			<img src="/assets/images/email-one/DYO_email-v3-1_01.jpg" width="704" height="59" alt=""></td>
