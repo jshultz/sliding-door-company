@@ -3,12 +3,15 @@
 	<title>DYO_email-v3-1</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<body bgcolor="#f6f6f6" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <!-- Save for Web Slices (DYO_email-v3-1) -->
 <style>
-	a {color: #BFD730; text-decoration: none; h3 {font-weight: 400;}}
+	a {color: #BFD730; text-decoration: none;}
+	h3 {font-weight: 400;}
+	body {background-color: #f6f6f6;}
+
 </style>
-<table id="Table_01" width="704" height="1057" border="0" cellpadding="0" cellspacing="0" style="color: #939598; font-size: 15px;">
+<table id="Table_01" width="704" height="1057" border="0" cellpadding="0" cellspacing="0" style="color: #939598; font-size: 15px; line-height: 18px; font-family: verdana, arial, san-serif">
 	<tr>
 		<td colspan="11">
 			<img src="/assets/images/email-one/DYO_email-v3-1_01.jpg" width="704" height="59" alt=""></td>
@@ -52,7 +55,7 @@
 	</tr>
 	<tr>
 		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_13.jpg')">
-			<div style="height: 460px; margin-top:40px;">
+			<div style="height: 400px; margin-top:40px;">
 
 				<div style="width: 510px; margin: 0 20px; height: 100px;">
 					<p><?php echo 'firstname' ?>,</p>
@@ -67,11 +70,15 @@
 					<h3>Your Design</h3>
 
 					<p>
-						Style: Wenge frame, linen glass
-						Size: 72”x32”
-						Number of Panels: 4
-						Base Price*: $1299
-
+						<strong>Style:</strong> Wenge frame, linen glass<br/>
+						<strong>Size:</strong> 72”x32”<br/>
+						<strong>Number of Panels:</strong> 4<br/>
+						<strong>Base Price*:</strong> $1299<br/>
+					</p>
+					<p>
+						Send these specs to your
+						showroom for more pricing
+						options.
 					</p>
 
 				</div>
@@ -81,16 +88,16 @@
 					<h3>Your Showroom</h3>
 
 					<p>
-						Our Chatsworth showroom is
+						Our <a href="#">Chatsworth</a> showroom is
 						serving your area.
 
 					</p>
 					<img height="50px" width="50px">
 
 					<p>
-						20235 Bahama St.
-						Chatsworth, CA 91311
-						t: 818 997 7855
+						20235 Bahama St.<br/>
+						Chatsworth, CA 91311<br/>
+						t: 818 997 7855<br/>
 						M-F: 9am-6pm
 
 					</p>
@@ -114,11 +121,11 @@
 	</tr>
 	<tr>
 		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_17.jpg')">
-			<div style=" width: 530px; padding: 0 20px; font-size: 12px; height: 51px">
+			<div style=" width: 530px; padding: 0 20px; font-size: 12px; height: 54px; margin-top:50px;">
 				<p>
 					For additional information regarding details, options and special pricing to the trade, please
 					contact
-					(localshowroomaddress)@slidingdoorco.com
+					<a href="mailto:(localshowroomaddress)@slidingdoorco.com">(localshowroomaddress)@slidingdoorco.com</a>
 				</p>
 			</div>
 		</td>
@@ -131,7 +138,7 @@
 				</p>
 
 				<p>
-					The Sliding Door Company | 20235 Bahama St. | Chatsworth, CA 91311 | slidingdoorco.com
+					The Sliding Door Company | 20235 Bahama St. | Chatsworth, CA 91311 | <a href="http://slidingdoorco.com">slidingdoorco.com</a>
 				</p>
 			</div>
 		</td>
