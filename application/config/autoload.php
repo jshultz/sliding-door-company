@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database','email');
+$autoload['libraries'] = array('database','email','googlemaps','geocodeit');
 
 
 /*
@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('Clients_model');
+$autoload['model'] = array('Clients_model','Location_model');
 
 
 /* End of file autoload.php */

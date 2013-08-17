@@ -96,11 +96,10 @@
 					<img height="50px" width="50px">
 
 					<p>
-						20235 Bahama St.<br/>
-						Chatsworth, CA 91311<br/>
-						t: 818 997 7855<br/>
+						<?php echo $address;?><br/>
+						<?php echo $city;?>, <?php echo $state;?> <?php echo $zip;?><br/>
+						t: <?php echo $telephone;?><br/>
 						M-F: 9am-6pm
-
 					</p>
 
 				</div>
@@ -126,7 +125,7 @@
 				<p>
 					For additional information regarding details, options and special pricing to the trade, please
 					contact
-					<a href="mailto:(localshowroomaddress)@slidingdoorco.com">(localshowroomaddress)@slidingdoorco.com</a>
+					<a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
 				</p>
 				<p style="font-size: 8px; line-height: 8px;">
 					*Save 10% when you spend up to $1000. Save 15% when you spend over $1000. Save 20% when you spend over $2000. Discount applies to products offered

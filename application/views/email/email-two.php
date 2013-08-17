@@ -58,7 +58,7 @@
 			<div style="height: 400px; margin-top:40px;">
 
 				<div style="width: 510px; margin: 0 20px; height: 100px;">
-					<p><?php echo 'firstname' ?>,</p>
+					<p><?php echo $firstname;?>,</p>
 
 					<p>You're invited to our Chatsworth showroom for a free personalized
 						consultation! You'll get one-on-one assistance from our trained experts and a
@@ -70,10 +70,10 @@
 					<h3>Your Design</h3>
 
 					<p>
-						<strong>Style:</strong> Wenge frame, linen glass<br/>
-						<strong>Size:</strong> 72”x32”<br/>
-						<strong>Number of Panels:</strong> 4<br/>
-						<strong>Base Price*:</strong> $1299<br/>
+						<strong>Style:</strong> <?php echo $style;?><br/>
+						<strong>Size:</strong> <?php echo $style;?><br/>
+						<strong>Number of Panels:</strong> <?php echo $panels;?><br/>
+						<strong>Base Price*:</strong> <?php echo $price;?><br/>
 					</p>
 					<p>
 						Change your mind?
@@ -88,18 +88,17 @@
 					<h3>Your Showroom</h3>
 
 					<p>
-						Our <a href="#">Chatsworth</a> showroom is
+						Our <a href="<?php echo $maplink;?>"><?php echo $location;?></a> showroom is
 						serving your area.
 
 					</p>
 					<img height="50px" width="50px">
 
 					<p>
-						20235 Bahama St.<br/>
-						Chatsworth, CA 91311<br/>
-						t: 818 997 7855<br/>
+						<?php echo $address;?><br/>
+						<?php echo $city;?>, <?php echo $state;?> <?php echo $zip;?><br/>
+						t: <?php echo $telephone;?><br/>
 						M-F: 9am-6pm
-
 					</p>
 
 				</div>
@@ -125,7 +124,7 @@
 				<p>
 					For additional information regarding details, options and special pricing to the trade, please
 					contact
-					<a href="mailto:(localshowroomaddress)@slidingdoorco.com">(localshowroomaddress)@slidingdoorco.com</a>
+					<a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
 				</p>
 
 			</div>

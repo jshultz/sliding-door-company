@@ -43,7 +43,14 @@ class Site extends CI_Controller {
 			$email = $this->input->get_post('Email', TRUE);
 			$source = $this->input->get_post('Source', TRUE);
 
-			$this->Clients_model->create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source);
+			$city = '';
+
+			$latlng  = $this->geocodeit->geocode($address,$city,$zip);
+			$pieces = explode(",", $latlng);
+			$lat = $pieces[0];
+			$lng = $pieces[1];
+
+			$this->Clients_model->create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng);
 
 		}
 
@@ -97,8 +104,41 @@ class Site extends CI_Controller {
 						$phone = $x['Phone'];
 						$email = $x['Email'];
 						$source = $x['Source'];
+						$lat = $x['lat'];
+						$lng = $x['lng'];
 
-						$this->Clients_model->send_email($firstName, $lastName, $address, $state, $zip, $phone, $email, $source);
+						$location = $this->Location_model->getClosetLocation($lat, $lng);
+
+						$config['protocol'] = 'mail';
+						$config['wordwrap'] = FALSE;
+						$config['mailtype'] = 'html';
+						$config['charset'] = 'utf-8';
+						$config['crlf'] = "\r\n";
+						$config['newline'] = "\r\n";
+
+						$this->email->initialize($config);
+
+						$fullname = $firstName . ' ' . $lastName;
+
+						$data['firstname'] = $firstName;
+
+
+						$this->email->from($email, $fullname);
+
+						$this->email->to($email, $fullname);
+
+						$this->email->subject('Welcome');
+
+						$email = $this->load->view('email/template', $data, TRUE);
+
+						$this->email->message($email);
+
+						$this->email->send();
+
+						echo 'email sent';
+
+						$this->Clients_model->updateCount($email);
+
 					}
 
 				}
@@ -135,6 +175,10 @@ class Site extends CI_Controller {
 
 	public function emailthree() {
 		$this->load->view('email/email-three');
+	}
+
+	public function test() {
+		$this->load->view('geocodetest');
 	}
 }
 

@@ -13,7 +13,7 @@ class Clients_model extends CI_Model {
 		parent::__construct();
 	}
 
-	function create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source) {
+	function create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng) {
 
 		$data = array(
 			'FirstName' => $firstName,
@@ -24,10 +24,10 @@ class Clients_model extends CI_Model {
 			'Phone' => $phone,
 			'Email' => $email,
 			'Source' => $source,
+			'lat' => $lat,
+			'lng' => $lng,
 			'Key'   => random_string('alnum', 45)
 		);
-
-		log_message('info', 'hello');
 
 		$this->db->select('*')
 			->from('clients')
@@ -42,10 +42,46 @@ class Clients_model extends CI_Model {
 		{
 			$this->db->insert('clients', $data);
 
+			$this->update_locations_lat();
+
 		} else {
 
 		}
 
+
+	}
+
+	function update_locations_lat() {
+
+		$this->db->select('*')
+			->from('locations')
+			->where('lat', NULL);
+
+			$query = $this->db->get();
+
+		foreach ($query->result() as $row)
+		{
+			$address =  $row->address;
+			$city = $row->city;
+			$zip =  $row->zip;
+			$id = $row->id;
+
+			$latlng  = $this->geocodeit->geocode($address,$city,$zip);
+			$pieces = explode(",", $latlng);
+			$lat = $pieces[0];
+			$lng = $pieces[1];
+
+			$data = array(
+				'lat' => $lat,
+				'lng' => $lng
+			);
+
+			$this->db->where('id', $id);
+			$this->db->update('locations', $data);
+
+
+
+		}
 
 	}
 
@@ -71,7 +107,7 @@ class Clients_model extends CI_Model {
 
 	}
 
-	function send_email($firstName, $lastName, $address, $state, $zip, $phone, $email, $source) {
+	function send_email($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng) {
 
 		$data = array(
 			'FirstName' => $firstName,
@@ -82,39 +118,13 @@ class Clients_model extends CI_Model {
 			'Phone' => $phone,
 			'Email' => $email,
 			'Source' => $source,
+			'lat' => $lat,
+			'lng' => $lng
 		);
 
 		echo 'we have people to email';
 
-		$config['charset'] = 'iso-8859-1';
-		$config['wordwrap'] = TRUE;
-		$config['mailtype'] = 'html';
 
-		$this->email->initialize($config);
-
-		$fullname = $firstName . ' ' . $lastName;
-
-		$this->email->from($email, $fullname);
-
-		$this->email->to($email, $fullname);
-
-		$email_message = "Customer Contact created for: " . $firstName . ' ' . $lastName . '<br/>';
-		$email_message .= "Email Address (if provided): " . $email . '<br/>';
-		$email_message .= "Address (if provided): " . $address . '<br/>';
-		$email_message .= 'State' . $state . ' ' . $zip . '<br/>';
-		$email_message .= "Telephone (if provided): " . $phone . '<br/>';
-		$email_message .= "Source: " . $source;
-
-
-		$this->email->subject('Welcome');
-
-		$this->email->message($email_message);
-
-		$this->email->send();
-
-		echo 'email sent';
-
-		$this->updateCount($email);
 	}
 
 	function updateCount($email) {
@@ -134,8 +144,7 @@ class Clients_model extends CI_Model {
 		} else {
 			foreach ($query->result() as $row)
 			{
-				echo '<pre>';
-				echo $row->EmailLevel;
+
 				$level = $row->EmailLevel + 1;
 
 				$data = array(
