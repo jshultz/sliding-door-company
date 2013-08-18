@@ -90,7 +90,7 @@ class Clients_model extends CI_Model {
 		$this->db->select('*')
 			->from('clients')
 			->where('Unsubscribed', '0')
-			->where('EmailLevel <', '2');
+			->where('EmailLevel <', '3');
 
 		$query = $this->db->get();
 
@@ -176,9 +176,13 @@ class Clients_model extends CI_Model {
 		} else {
 			foreach ($query->result() as $row)
 			{
+				$data = array(
+					'Unsubscribed' => '1'
+				);
+
 				$this->db->where('Email', $email);
 				$this->db->where('Key', $Key);
-				$this->db->delete('clients');
+				$this->db->update('clients', $data);
 
 			}
 		}

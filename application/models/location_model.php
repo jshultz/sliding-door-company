@@ -5,6 +5,23 @@
 		function __construct() {
 		}
 
+		public function calc_distance($point1, $point2)
+		{
+			$radius      = 3958;      // Earth's radius (miles)
+			$deg_per_rad = 57.29578;  // Number of degrees/radian (for conversion)
+
+			$distance = ($radius * pi() * sqrt(
+					($point1['lat'] - $point2['lat'])
+					* ($point1['lat'] - $point2['lat'])
+					+ cos($point1['lat'] / $deg_per_rad)  // Convert these to
+					  * cos($point2['lat'] / $deg_per_rad)  // radians for cos()
+					  * ($point1['long'] - $point2['long'])
+					  * ($point1['long'] - $point2['long'])
+				) / 180);
+
+			return $distance;  // Returned using the units used for $radius.
+		}
+
 		# Spherical Law of Cosines
 		public function distance_slc($lat1, $lon1, $lat2, $lon2) {
 			$earth_radius = 3960.00; # in miles
@@ -99,10 +116,41 @@
 			$location = $this->db->get();
 			foreach ($location->result_array() as $address) {
 
-				$distance = $this->distance_slc($lat, $lng, $address['lat'], $address['lng']);
+				$point1 = array(
+					'lat' => $lat,
+					'long' => $lng
+				);
 
-				if ($distance < 150.0000) {
+				$point2 = array(
+					'lat' => $address['lat'],
+					'long' => $address['lng']
+				);
+
+				$distance = $this->distance_slc($lat, $lng, $address['lat'], $address['lng']);
+				$address['distance'] = $distance;
+
+				//$distance = $this->calc_distance($point1, $point2);
+
+				if ($distance < 500.0000) {
 					$results[] = $address;
+
+
+					$sortArray = array();
+
+					foreach($results as $result){
+						foreach($result as $key=>$value){
+							if(!isset($sortArray[$key])){
+								$sortArray[$key] = array();
+							}
+							$sortArray[$key][] = $value;
+						}
+					}
+
+					$orderby = "distance"; //change this to whatever key you want from the array
+
+					array_multisort($sortArray[$orderby],SORT_ASC,$results);
+
+
 				}
 			}
 
@@ -167,6 +215,5 @@
 			$this->db->where( 'idlocation', $id );
 			$this->db->delete( 'locations' );
 		}
-
 
 	}

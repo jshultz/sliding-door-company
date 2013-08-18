@@ -102,8 +102,10 @@ class Site extends CI_Controller {
 						$state = $x['State'];
 						$zip = $x['Zip'];
 						$phone = $x['Phone'];
-						$email = $x['Email'];
+						$cust_email = $x['Email'];
+						$key = $x['Key'];
 						$source = $x['Source'];
+						$emailLevel = $x['EmailLevel'];
 						$lat = $x['lat'];
 						$lng = $x['lng'];
 
@@ -121,23 +123,58 @@ class Site extends CI_Controller {
 						$fullname = $firstName . ' ' . $lastName;
 
 						$data['firstname'] = $firstName;
+						$data['lastname'] = $lastName;
+						$data['cust_email'] = $cust_email;
+						$data['key'] = $key;
+
+						$data['style'] = 'style test';
+						$data['size'] = 'size test';
+						$data['panels'] = 'panels test';
+						$data['price'] = 'price test';
+
+						$count = 1;
+
+						if ($count == 1) {
+							foreach ($location as $place) {
+
+								$data['maplink'] = $place['map_link'];
+								$data['location'] = $place['location'];
+								$data['address'] = $place['address'];
+								$data['city'] = $place['city'];
+								$data['state'] = $place['state'];
+								$data['zip'] = $place['zip'];
+								$data['telephone'] = $place['telephone'];
+								$data['email'] = $place['email'];
+							}
+						}
 
 
-						$this->email->from($email, $fullname);
+						$this->email->from($cust_email, $fullname);
 
-						$this->email->to($email, $fullname);
+						$this->email->to($cust_email, $fullname);
 
-						$this->email->subject('Welcome');
 
-						$email = $this->load->view('email/template', $data, TRUE);
+
+						switch ($emailLevel) {
+							case 0:
+								$this->email->subject('Thank You For Signing Up');
+								$email = $this->load->view('email/email-one', $data, TRUE);
+								break;
+							case 1:
+								$this->email->subject('Thank You From The Sliding Door Company');
+								$email = $this->load->view('email/email-two', $data, TRUE);
+								break;
+							case 2:
+								$this->email->subject('Here is something special from The Sliding Door Company!');
+								$email = $this->load->view('email/email-three', $data, TRUE);
+								break;
+						}
 
 						$this->email->message($email);
 
 						$this->email->send();
 
-						echo 'email sent';
-
-						$this->Clients_model->updateCount($email);
+						$this->Clients_model->updateCount($cust_email);
 
 					}
 
@@ -154,12 +191,12 @@ class Site extends CI_Controller {
 
 		if (isset($_GET) || isset($_POST)) {
 
-			$email = $this->input->get_post('Email', TRUE);
-			$Key = $this->input->get_post('Key', TRUE);
-
-			$this->Clients_model->create_client($email, $Key);
+			$email = $this->input->get_post('email', TRUE);
+			$Key = $this->input->get_post('key', TRUE);
 			
 			$this->Clients_model->unsubscribeEmail($email, $Key);
+
+			$this->load->view('unsubscribed');
 
 		}
 	
