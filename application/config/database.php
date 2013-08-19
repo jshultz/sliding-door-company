@@ -45,7 +45,7 @@
 | the active record class
 */
 
-$active_group = 'dev';
+$active_group = 'local';
 $active_record = TRUE;
 
 $db['local']['hostname'] = 'localhost';
@@ -66,7 +66,21 @@ $db['local']['stricton'] = FALSE;
 
 	
 	
-
+$db['dev']['hostname'] = 'localhost';
+$db['dev']['username'] = 'osmproje_slide';
+$db['dev']['password'] = '5@9c$7_PIeOS';
+$db['dev']['database'] = 'osmproje_sliding';
+$db['dev']['dbdriver'] = 'mysql';
+$db['dev']['dbprefix'] = '';
+$db['dev']['pconnect'] = TRUE;
+$db['dev']['db_debug'] = TRUE;
+$db['dev']['cache_on'] = FALSE;
+$db['dev']['cachedir'] = '';
+$db['dev']['char_set'] = 'utf8';
+$db['dev']['dbcollat'] = 'utf8_general_ci';
+$db['dev']['swap_pre'] = '';
+$db['dev']['autoinit'] = TRUE;
+$db['dev']['stricton'] = FALSE;
 
 
 /* End of file database.php */

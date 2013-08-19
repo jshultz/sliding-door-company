@@ -158,14 +158,24 @@ class Site extends CI_Controller {
 						switch ($emailLevel) {
 							case 0:
 								$this->email->subject('Thank You For Signing Up');
+								$data['special'] = FALSE;
+								$data['message'] = '<p>Thank you for designing your beautiful new closet doors with us. Your next step is sharing the specs of your custom order with the showroom below for more detailed pricing and options.</p>';
 								$email = $this->load->view('email/email-one', $data, TRUE);
 								break;
 							case 1:
 								$this->email->subject('Thank You From The Sliding Door Company');
+								$data['special'] = FALSE;
+								$data['message'] = "<p>You're invited to our " . $place['city']  . "showroom for a free personalized
+													consultation! You'll get one-on-one assistance from our trained experts and a
+													first-hand look at your material options.</p>";
 								$email = $this->load->view('email/email-two', $data, TRUE);
 								break;
 							case 2:
 								$this->email->subject('Here is something special from The Sliding Door Company!');
+								$data['special'] = TRUE;
+								$data['message'] = "<p>You’re invited to our " . $place['city'] . " showroom for a free personalized
+													consultation! You’ll get one-on-one assistance from our trained experts and a
+													first-hand look at your material options.</p>";
 								$email = $this->load->view('email/email-three', $data, TRUE);
 								break;
 						}

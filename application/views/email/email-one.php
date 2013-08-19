@@ -15,7 +15,7 @@
 	h3 {font-weight: 400;}
 	body {background-color: #f6f6f6;}
 </style>
-<table id="Table_01" width="704" height="1057" border="0" cellpadding="0" cellspacing="0" style="color: #939598; background-color: #ffffff; font-size: 15px; line-height: 18px; font-family: verdana, arial, san-serif">
+<table id="Table_01" width="704" border="0" cellpadding="0" cellspacing="0" style="color: #939598; background-color: #ffffff; font-size: 15px; line-height: 18px; font-family: verdana, arial, san-serif">
 	<tr>
 		<td colspan="11">
 			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_01.jpg" width="704" height="59" alt=""></td>
@@ -62,11 +62,21 @@
 			<div style="">
 
 				<div style="width: 510px; margin: 0 20px; ">
-					<p><?php echo $firstname;?>,</p>
+					<?php
+						if ((isset($firstname) && (strlen($firstname) > 0))) {
 
-					<p>Thank you for designing your beautiful new closet doors with us. Your next
-						step is sharing the specs of your custom order with the showroom below for
-						more detailed pricing and options.</p>
+							echo '<p>' . $firstname . '</p>';
+						}
+					?>
+
+
+
+					<?php
+						if ((isset($message) && (strlen($message) > 0))) {
+
+							echo $message;
+						}
+					?>
 				</div>
 
 				<div style="width:240px; padding: 0 20px; float: left">
@@ -74,16 +84,48 @@
 					<h3>Your Design</h3>
 
 					<p>
-						<strong>Style:</strong> <?php echo $style;?><br/>
-						<strong>Size:</strong> <?php echo $size;?><br/>
-						<strong>Number of Panels:</strong> <?php echo $panels;?><br/>
-						<strong>Base Price*:</strong> <?php echo $price;?><br/>
+						<strong>Style: </strong> <?php
+							if ((isset($style) && (strlen($style) > 0))) {
+
+								echo $style;
+							}
+						?><br/>
+						<strong>Size: </strong><?php
+							if ((isset($size) && (strlen($size) > 0))) {
+
+								echo $size;
+							}
+						?><br/>
+						<strong>Number of Panels: </strong> <?php
+							if ((isset($panels) && (strlen($panels) > 0))) {
+
+								echo $panels;
+							}
+						?><br/>
+						<strong>Base Price*: </strong> <?php
+							if ((isset($price) && (strlen($price) > 0))) {
+
+								echo $price;
+							}
+						?><br/>
 					</p>
-					<p>
-						Send these specs to your
-						showroom for more pricing
-						options.
-					</p>
+					<?php
+						if ($special = TRUE) {
+							echo '<p>
+									Get started by sharing your
+									custom specs and discount with
+									your local showroom for detailed
+									pricing and options.
+								</p>';
+
+						} else {
+							echo '<p>
+									Send these specs to your
+									showroom for more pricing
+									options.
+								</p>';
+						}
+					?>
 
 				</div>
 
@@ -92,17 +134,58 @@
 					<h3>Your Showroom</h3>
 
 					<p>
-						Our <a href="<?php echo $maplink;?>"><?php echo $location;?></a> showroom is
+						Our <a href="<?php
+							if ((isset($maplink) && (strlen($maplink) > 0))) {
+
+								echo $maplink;
+							}
+						?>"><?php
+								if ((isset($location) && (strlen($location) > 0))) {
+
+									echo $location;
+								}
+							?></a> showroom is
 						serving your area.
 
 					</p>
-					<a href="<?php echo $maplink;?>"><img border="0" width="150px" src="http://sliding.osmprojects.com/assets/images/email-one/Google-Maps-Logo.png"></a>
+					<a href="<?php
+						if ((isset($maplink) && (strlen($maplink) > 0))) {
+
+							echo $maplink;
+						}
+					?><img border="0" width="150px" src="http://sliding.osmprojects.com/assets/images/email-one/Google-Maps-Logo.png"></a>
 
 
 					<p>
-						<?php echo $address;?><br/>
-						<?php echo $city;?>, <?php echo $state;?> <?php echo $zip;?><br/>
-						t: <?php echo $telephone;?><br/>
+						<?php
+							if ((isset($address) && (strlen($address) > 0))) {
+
+								echo $address;
+							}
+						?><br/>
+						<?php
+							if ((isset($city) && (strlen($city) > 0))) {
+
+								echo $city;
+							}
+						?>
+						, <?php
+							if ((isset($state) && (strlen($state) > 0))) {
+
+								echo $state;
+							}
+						?> <?php
+							if ((isset($zip) && (strlen($zip) > 0))) {
+
+								echo $zip;
+							}
+						?><br/>
+						t: <?php
+							if ((isset($telephone) && (strlen($telephone) > 0))) {
+
+								echo $telephone;
+							}
+						?><br/>
 						M-F: 9am-6pm
 					</p>
 
@@ -129,17 +212,37 @@
 				<p>
 					For additional information regarding details, options and special pricing to the trade, please
 					contact
-					<a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+					<?php
+						if ((isset($email) && (strlen($email) > 0))) {
+
+							echo '<a href="' . $email . '">' . $email . '</a>';
+						}
+					?>
+
 				</p>
+				<?php if ($special = TRUE) {
+					echo "<p style='font-size: 8px; line-height: 8px;'>
+					*Save 10% when you spend up to $1000. Save 15% when you spend over $1000. Save 20% when you spend over $2000. Discount applies to products offered
+					by The Sliding Door Company and may not be applied to installation or sales tax. Discount can not be combined with other offers or can not be applied to past
+					purchases. Discount valid for email recipient only, and expires on";
+					echo date('Y-m-d', strtotime("+30 days"));
+					echo ". </p>";
+				} ?>
 			</div>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_18.jpg');">
 			<div style=" width: 530px; padding: 0 20px; font-size: 10px">
-				<p><a href="http://slidingdoorco.us5.list-manage1.com/subscribe/post?u=8f352881da294a071db8b8ed5&id=2d9fbec01c&MERGE0=<?php echo $cust_email;?>&MERGE1=<?php echo $firstname;?>&MERGE2=<?php echo $lastname;?>">SIGN UP FOR THE LATEST EVENTS AND OFFERS</a>
-					 | <a href="http://sliding.osmprojects.com/site/unsubscribe?email=<?php echo $cust_email ?>&key=<?php echo $key ?>">Unsubscribe</a>
-				</p>
+				<?php
+					if ((isset($cust_email) && (strlen($cust_email) > 0))) {
+
+						echo '<p><a href="http://slidingdoorco.us5.list-manage1.com/subscribe/post?u=8f352881da294a071db8b8ed5&id=2d9fbec01c&MERGE0=' . $cust_email . '&MERGE1=' . $firstname . '&MERGE2=' . $lastname . '">SIGN UP FOR THE LATEST EVENTS AND OFFERS</a>
+				| <a href="http://sliding.osmprojects.com/site/unsubscribe?email=' . $cust_email . '&key=' . $key . '">Unsubscribe</a>
+				</p>';
+					}
+				?>
+
 
 				<p>
 					The Sliding Door Company | 20235 Bahama St. | Chatsworth, CA 91311 | <a href="http://slidingdoorco.com">slidingdoorco.com</a>
