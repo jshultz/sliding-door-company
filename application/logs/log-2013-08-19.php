@@ -1145,3 +1145,138 @@ DEBUG - 2013-08-19 09:27:26 --> Controller Class Initialized
 DEBUG - 2013-08-19 09:27:26 --> File loaded: application/views/email/email-one.php
 DEBUG - 2013-08-19 09:27:26 --> Final output sent to browser
 DEBUG - 2013-08-19 09:27:26 --> Total execution time: 0.0410
+DEBUG - 2013-08-19 09:39:49 --> Config Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Hooks Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Utf8 Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> UTF-8 Support Enabled
+DEBUG - 2013-08-19 09:39:49 --> URI Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Router Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Output Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Security Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Input Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-19 09:39:49 --> Language Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Loader Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Helper loaded: form_helper
+DEBUG - 2013-08-19 09:39:49 --> Helper loaded: url_helper
+DEBUG - 2013-08-19 09:39:49 --> Helper loaded: email_helper
+DEBUG - 2013-08-19 09:39:49 --> Helper loaded: string_helper
+DEBUG - 2013-08-19 09:39:49 --> Database Driver Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Email Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Google Maps Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Model Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Model Class Initialized
+DEBUG - 2013-08-19 09:39:49 --> Controller Class Initialized
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 109
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 110
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 125
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 126
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lat /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  lng /Users/jshultz/Sites/random/sliding-door-company/application/models/location_model.php 129
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+ERROR - 2013-08-19 09:39:49 --> Severity: Notice  --> Undefined index:  map_link /Users/jshultz/Sites/random/sliding-door-company/application/controllers/site.php 140
+DEBUG - 2013-08-19 09:39:49 --> File loaded: application/views/email/email-one.php
