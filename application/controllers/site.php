@@ -168,7 +168,7 @@ class Site extends CI_Controller {
 								$data['message'] = "<p>You're invited to our " . $place['city']  . "showroom for a free personalized
 													consultation! You'll get one-on-one assistance from our trained experts and a
 													first-hand look at your material options.</p>";
-								$email = $this->load->view('email/email-two', $data, TRUE);
+								$email = $this->load->view('email/email-one', $data, TRUE);
 								break;
 							case 2:
 								$this->email->subject('Here is something special from The Sliding Door Company!');
@@ -176,7 +176,7 @@ class Site extends CI_Controller {
 								$data['message'] = "<p>You’re invited to our " . $place['city'] . " showroom for a free personalized
 													consultation! You’ll get one-on-one assistance from our trained experts and a
 													first-hand look at your material options.</p>";
-								$email = $this->load->view('email/email-three', $data, TRUE);
+								$email = $this->load->view('email/email-one', $data, TRUE);
 								break;
 						}
 

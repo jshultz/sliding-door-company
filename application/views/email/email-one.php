@@ -15,200 +15,186 @@
 	h3 {font-weight: 400;}
 	body {background-color: #f6f6f6;}
 </style>
-<table id="Table_01" width="704" border="0" cellpadding="0" cellspacing="0" style="color: #939598; background-color: #ffffff; font-size: 15px; line-height: 18px; font-family: verdana, arial, san-serif">
-	<tr>
-		<td colspan="11">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_01.jpg" width="704" height="59" alt=""></td>
-	</tr>
-	<tr>
-		<td rowspan="8">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_02.jpg" width="65" height="997" alt=""></td>
-		<td>
-			<a href="http://www.slidingdoorco.com/showrooms"><img border="0" src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_03.jpg"
-			                                                      width="96" height="45" alt=""></a></td>
-		<td>
-			<a href="http://www.slidingdoorco.com/help/contact"><img
-					border="0" src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_04.jpg" width="81" height="45" alt=""></a>
-		</td>
-		<td colspan="4">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_05.jpg" width="274" height="45" alt=""></td>
-		<td rowspan="2">
-			<a href="https://www.facebook.com/TheSlidingDoorCo"><img
-					border="0" src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_06.jpg" width="28" height="46" alt=""></a>
-		</td>
-		<td rowspan="2">
-			<a href="http://twitter.com/#!/slidingdoorco"><img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_07.jpg"
-			                                                   width="24" height="46" alt=""></a>
-		</td>
-		<td rowspan="2">
-			<a href="http://www.youtube.com/slidingdoorcompany/"><img
-					<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_08.jpg" width="72" height="46" alt=""></a>
-		</td>
-		<td rowspan="8">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_09.jpg" width="64" height="997" alt=""></td>
-	</tr>
-	<tr>
-		<td colspan="4" rowspan="2">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_10.jpg" width="243" height="123" alt=""></td>
+<table id="Table_01" width="704" border="0" cellpadding="0" cellspacing="0" style="margin: 40px auto; color: #939598; background-color: #ffffff; border: 1px solid gray; font-size: 15px; line-height: 18px; font-family: verdana, arial, san-serif">
+
+	<tr style="background-color: #F0F0F0; height: 35px;">
 		<td colspan="2">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_11.jpg" width="208" height="1" alt=""></td>
+			<table width="100%">
+				<td style="vertical-align: middle; text-align: center; width: 65px"><a style="text-transform: uppercase; display: block; margin: 0 auto; color: #939598; font-size: 8px; border-right: 1px solid gray;" href="http://www.slidingdoorco.com/showrooms">Showrooms</a></td>
+				<td style="vertical-align: middle; text-align: center; width: 65px"><a style="text-transform: uppercase; margin: 0 auto; color: #939598; font-size: 8px" href="http://www.slidingdoorco.com/help/contact">Contact Us</a></td>
+				<td style="width: 300px"></td>
+				<td style="width: 20px; text-align: center"><a style="margin: 0 auto;" href="https://www.facebook.com/TheSlidingDoorCo"><img
+							border="0" src="http://sliding.osmprojects.com/assets/images/email-one/facebook.png" height="14px;"  alt=""></a></td>
+				<td style="width: 20px; text-align: center"><a style="margin: 0 auto;" href="http://twitter.com/#!/slidingdoorco"><img src="http://sliding.osmprojects.com/assets/images/email-one/twitter.png" height="14px"
+				                                                                                                                       alt=""></a></td>
+				<td style="width: 20px; text-align: center"><a style="margin: 0 auto;" href="http://www.youtube.com/slidingdoorcompany/"><img
+						<img src="http://sliding.osmprojects.com/assets/images/email-one/youtube.png" height="14px"  alt=""></a></td>
+			</table>
+		</td>
+
 	</tr>
 	<tr>
-		<td colspan="5">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_12.jpg" width="332" height="122" alt=""></td>
+		<td colspan="1">
+			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_10.jpg" width="243" height="123" alt="">
+		</td>
+		<td colspan="1">
+			<?php
+				if ($special = TRUE) {
+					echo '<img src="http://sliding.osmprojects.com/assets/images/email-one/special.png" alt="">';
+
+				} else {
+
+				}
+			?>
+
+		</td>
 	</tr>
 	<tr>
-		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_13.jpg')">
-			<div style="">
+		<td colspan="2">
+			<div style="width: 510px; margin: 0 20px; ">
+				<?php
+					if ((isset($firstname) && (strlen($firstname) > 0))) {
 
-				<div style="width: 510px; margin: 0 20px; ">
-					<?php
-						if ((isset($firstname) && (strlen($firstname) > 0))) {
+						echo '<p>' . $firstname . '</p>';
+					}
+				?>
 
-							echo '<p>' . $firstname . '</p>';
+
+
+				<?php
+					if ((isset($message) && (strlen($message) > 0))) {
+
+						echo $message;
+					}
+				?>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="1" style="vertical-align: top;">
+			<div style="width:240px; padding: 0 20px; float: left">
+
+				<h3>Your Design</h3>
+
+				<p>
+					<strong>Style: </strong> <?php
+						if ((isset($style) && (strlen($style) > 0))) {
+
+							echo $style;
 						}
-					?>
+					?><br/>
+					<strong>Size: </strong><?php
+						if ((isset($size) && (strlen($size) > 0))) {
 
-
-
-					<?php
-						if ((isset($message) && (strlen($message) > 0))) {
-
-							echo $message;
+							echo $size;
 						}
-					?>
-				</div>
+					?><br/>
+					<strong>Number of Panels: </strong> <?php
+						if ((isset($panels) && (strlen($panels) > 0))) {
 
-				<div style="width:240px; padding: 0 20px; float: left">
+							echo $panels;
+						}
+					?><br/>
+					<strong>Base Price*: </strong> <?php
+						if ((isset($price) && (strlen($price) > 0))) {
 
-					<h3>Your Design</h3>
-
-					<p>
-						<strong>Style: </strong> <?php
-							if ((isset($style) && (strlen($style) > 0))) {
-
-								echo $style;
-							}
-						?><br/>
-						<strong>Size: </strong><?php
-							if ((isset($size) && (strlen($size) > 0))) {
-
-								echo $size;
-							}
-						?><br/>
-						<strong>Number of Panels: </strong> <?php
-							if ((isset($panels) && (strlen($panels) > 0))) {
-
-								echo $panels;
-							}
-						?><br/>
-						<strong>Base Price*: </strong> <?php
-							if ((isset($price) && (strlen($price) > 0))) {
-
-								echo $price;
-							}
-						?><br/>
-					</p>
-					<?php
-						if ($special = TRUE) {
-							echo '<p>
+							echo $price;
+						}
+					?><br/>
+				</p>
+				<?php
+					if ($special = TRUE) {
+						echo '<p>
 									Get started by sharing your
 									custom specs and discount with
 									your local showroom for detailed
 									pricing and options.
 								</p>';
 
-						} else {
-							echo '<p>
+					} else {
+						echo '<p>
 									Send these specs to your
 									showroom for more pricing
 									options.
 								</p>';
-						}
-					?>
+					}
+				?>
 
-				</div>
+			</div>
+		</td>
+		<td colspan="1" style="vertical-align: top;">
+			<div style="width:240px; padding: 0 20px;">
 
-				<div style="width:240px; padding: 0 20px; float: right">
+				<h3>Your Showroom</h3>
 
-					<h3>Your Showroom</h3>
-
-					<p>
-						Our <a href="<?php
-							if ((isset($maplink) && (strlen($maplink) > 0))) {
-
-								echo $maplink;
-							}
-						?>"><?php
-								if ((isset($location) && (strlen($location) > 0))) {
-
-									echo $location;
-								}
-							?></a> showroom is
-						serving your area.
-
-					</p>
-					<a href="<?php
+				<p>
+					Our <a href="<?php
 						if ((isset($maplink) && (strlen($maplink) > 0))) {
 
 							echo $maplink;
 						}
-					?><img border="0" width="150px" src="http://sliding.osmprojects.com/assets/images/email-one/Google-Maps-Logo.png"></a>
+					?>"><?php
+							if ((isset($location) && (strlen($location) > 0))) {
 
-
-					<p>
-						<?php
-							if ((isset($address) && (strlen($address) > 0))) {
-
-								echo $address;
+								echo $location;
 							}
-						?><br/>
-						<?php
-							if ((isset($city) && (strlen($city) > 0))) {
+						?></a> showroom is
+					serving your area.
 
-								echo $city;
-							}
-						?>
-						, <?php
-							if ((isset($state) && (strlen($state) > 0))) {
+				</p>
+				<a href="<?php
+					if ((isset($maplink) && (strlen($maplink) > 0))) {
 
-								echo $state;
-							}
-						?> <?php
-							if ((isset($zip) && (strlen($zip) > 0))) {
+						echo $maplink;
+					};?>">
 
-								echo $zip;
-							}
-						?><br/>
-						t: <?php
-							if ((isset($telephone) && (strlen($telephone) > 0))) {
+					<img border="0" width="150px" src="http://sliding.osmprojects.com/assets/images/email-one/Google-Maps-Logo.png"></a>
 
-								echo $telephone;
-							}
-						?><br/>
-						M-F: 9am-6pm
-					</p>
 
-				</div>
+				<p>
+					<?php
+						if ((isset($address) && (strlen($address) > 0))) {
 
+							echo $address;
+						}
+					?><br/>
+					<?php
+						if ((isset($city) && (strlen($city) > 0))) {
+
+							echo $city;
+						}
+					?>
+					, <?php
+						if ((isset($state) && (strlen($state) > 0))) {
+
+							echo $state;
+						}
+					?> <?php
+						if ((isset($zip) && (strlen($zip) > 0))) {
+
+							echo $zip;
+						}
+					?><br/>
+					t: <?php
+						if ((isset($telephone) && (strlen($telephone) > 0))) {
+
+							echo $telephone;
+						}
+					?><br/>
+					M-F: 9am-6pm
+				</p>
 
 			</div>
-
 		</td>
 	</tr>
 	<tr>
-		<td colspan="3">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_14.jpg" width="185" height="54" alt=""></td>
+		<td colspan="2" style="text-align: center; vertical-align: middle; height: 100px">
+			<img src="http://sliding.osmprojects.com/assets/images/email-one/free-consultation.png">
+		</td>
+	</tr>
+	<tr>
 		<td colspan="2">
-			<a href=""><img
-					border="0" src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_15.jpg" width="184" height="54" alt=""></a>
-		</td>
-		<td colspan="4">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_16.jpg" width="206" height="54" alt=""></td>
-	</tr>
-	<tr>
-		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_17.jpg')">
-			<div style=" width: 530px; padding: 0 20px; font-size: 12px; ">
+			<div style="padding: 0 20px; font-size: 12px; ">
 				<p>
 					For additional information regarding details, options and special pricing to the trade, please
 					contact
@@ -232,8 +218,8 @@
 		</td>
 	</tr>
 	<tr>
-		<td colspan="9" style="background: url('/assets/images/email-one/DYO_email-v3-1_18.jpg');">
-			<div style=" width: 530px; padding: 0 20px; font-size: 10px">
+		<td colspan="2">
+			<div style="padding: 0 20px; font-size: 10px">
 				<?php
 					if ((isset($cust_email) && (strlen($cust_email) > 0))) {
 
@@ -250,34 +236,7 @@
 			</div>
 		</td>
 	</tr>
-	<tr>
-		<td colspan="9">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_19.jpg" width="575" height="152" alt=""></td>
-	</tr>
-	<tr>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="65" height="1" alt=""></td>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="96" height="1" alt=""></td>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="81" height="1" alt=""></td>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="8" height="1" alt=""></td>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="58" height="1" alt=""></td>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="126" height="1" alt=""></td>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="82" height="1" alt=""></td>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="28" height="1" alt=""></td>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="24" height="1" alt=""></td>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="72" height="1" alt=""></td>
-		<td>
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/spacer.gif" width="64" height="1" alt=""></td>
-	</tr>
+
 </table>
 <!-- End Save for Web Slices -->
 </body>
