@@ -107,25 +107,7 @@ class Clients_model extends CI_Model {
 
 	}
 
-	function send_email($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng) {
 
-		$data = array(
-			'FirstName' => $firstName,
-			'LastName' => $lastName,
-			'Address' => $address,
-			'State' => $state,
-			'Zip' => $zip,
-			'Phone' => $phone,
-			'Email' => $email,
-			'Source' => $source,
-			'lat' => $lat,
-			'lng' => $lng
-		);
-
-		echo 'we have people to email';
-
-
-	}
 
 	function updateCount($email) {
 		$this->db->select('*')
@@ -149,6 +131,39 @@ class Clients_model extends CI_Model {
 
 				$data = array(
 					'EmailLevel' => $level
+				);
+
+				$this->db->where('Email', $email);
+				$this->db->update('clients', $data);
+
+			}
+		}
+	}
+
+	function updateDate($email) {
+		$this->db->select('*')
+			->from('clients')
+			->where('Email', $email);
+
+		$query = $this->db->get();
+
+		$row = $query->row_array();
+		$num = $query->num_rows();
+
+		if ($num < 1)
+		{
+			echo 'Something went wrong';
+
+		} else {
+			foreach ($query->result() as $row)
+			{
+				$lastDate = $row->lastSent;
+
+				$today = date("Y-m-d");
+
+
+				$data = array(
+					'lastSent' => $today
 				);
 
 				$this->db->where('Email', $email);

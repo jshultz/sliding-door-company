@@ -20,8 +20,8 @@
 	<tr style="background-color: #F0F0F0; height: 35px;">
 		<td colspan="2">
 			<table width="100%">
-				<td style="vertical-align: middle; text-align: center; width: 65px"><a style="text-transform: uppercase; display: block; margin: 0 auto; color: #939598; font-size: 8px; border-right: 1px solid gray;" href="http://www.slidingdoorco.com/showrooms">Showrooms</a></td>
-				<td style="vertical-align: middle; text-align: center; width: 65px"><a style="text-transform: uppercase; margin: 0 auto; color: #939598; font-size: 8px" href="http://www.slidingdoorco.com/help/contact">Contact Us</a></td>
+				<td style="vertical-align: middle; text-align: center; width: 65px"><a style="text-transform: uppercase; text-decoration: none; display: block; margin: 0 auto; color: #939598; font-size: 8px; border-right: 1px solid gray;" href="http://www.slidingdoorco.com/showrooms">Showrooms</a></td>
+				<td style="vertical-align: middle; text-align: center; width: 65px"><a style="text-transform: uppercase; text-decoration: none; margin: 0 auto; color: #939598; font-size: 8px" href="http://www.slidingdoorco.com/help/contact">Contact Us</a></td>
 				<td style="width: 300px"></td>
 				<td style="width: 20px; text-align: center"><a style="margin: 0 auto;" href="https://www.facebook.com/TheSlidingDoorCo"><img
 							border="0" src="http://sliding.osmprojects.com/assets/images/email-one/facebook.png" height="14px;"  alt=""></a></td>
@@ -37,10 +37,10 @@
 		<td colspan="1">
 			<img src="http://sliding.osmprojects.com/assets/images/email-one/DYO_email-v3-1_10.jpg" width="243" height="123" alt="">
 		</td>
-		<td colspan="1">
+		<td colspan="1" style="text-align: right; vertical-align: middle;">
 			<?php
-				if ($special = TRUE) {
-					echo '<img src="http://sliding.osmprojects.com/assets/images/email-one/special.png" alt="">';
+				if ($special == '1') {
+					echo '<img style="margin-right: 40px" src="http://sliding.osmprojects.com/assets/images/email-one/special.png" alt="">';
 
 				} else {
 
@@ -103,7 +103,7 @@
 					?><br/>
 				</p>
 				<?php
-					if ($special = TRUE) {
+					if ($special == '1') {
 						echo '<p>
 									Get started by sharing your
 									custom specs and discount with
@@ -128,7 +128,7 @@
 				<h3>Your Showroom</h3>
 
 				<p>
-					Our <a href="<?php
+					Our <a style="color: #BFD730; text-decoration: none;" href="<?php
 						if ((isset($maplink) && (strlen($maplink) > 0))) {
 
 							echo $maplink;
@@ -189,7 +189,7 @@
 	</tr>
 	<tr>
 		<td colspan="2" style="text-align: center; vertical-align: middle; height: 100px">
-			<img src="http://sliding.osmprojects.com/assets/images/email-one/free-consultation.png">
+			<a href=""><img src="http://sliding.osmprojects.com/assets/images/email-one/free-consultation.png"></a>
 		</td>
 	</tr>
 	<tr>
@@ -206,7 +206,7 @@
 					?>
 
 				</p>
-				<?php if ($special = TRUE) {
+				<?php if ($special == '1') {
 					echo "<p style='font-size: 8px; line-height: 8px;'>
 					*Save 10% when you spend up to $1000. Save 15% when you spend over $1000. Save 20% when you spend over $2000. Discount applies to products offered
 					by The Sliding Door Company and may not be applied to installation or sales tax. Discount can not be combined with other offers or can not be applied to past
@@ -223,7 +223,7 @@
 				<?php
 					if ((isset($cust_email) && (strlen($cust_email) > 0))) {
 
-						echo '<p><a href="http://slidingdoorco.us5.list-manage1.com/subscribe/post?u=8f352881da294a071db8b8ed5&id=2d9fbec01c&MERGE0=' . $cust_email . '&MERGE1=' . $firstname . '&MERGE2=' . $lastname . '">SIGN UP FOR THE LATEST EVENTS AND OFFERS</a>
+						echo '<p><a style="color: #BFD730; text-decoration: none;" href="http://slidingdoorco.us5.list-manage1.com/subscribe/post?u=8f352881da294a071db8b8ed5&id=2d9fbec01c&MERGE0=' . $cust_email . '&MERGE1=' . $firstname . '&MERGE2=' . $lastname . '">SIGN UP FOR THE LATEST EVENTS AND OFFERS</a>
 				| <a href="http://sliding.osmprojects.com/site/unsubscribe?email=' . $cust_email . '&key=' . $key . '">Unsubscribe</a>
 				</p>';
 					}
@@ -231,7 +231,7 @@
 
 
 				<p>
-					The Sliding Door Company | 20235 Bahama St. | Chatsworth, CA 91311 | <a href="http://slidingdoorco.com">slidingdoorco.com</a>
+					The Sliding Door Company | 20235 Bahama St. | Chatsworth, CA 91311 | <a style="text-decoration: none;" href="http://slidingdoorco.com">slidingdoorco.com</a>
 				</p>
 			</div>
 		</td>

@@ -49,7 +49,7 @@ $active_group = 'local';
 $active_record = TRUE;
 
 $db['local']['hostname'] = 'localhost';
-$db['local']['username'] = 'axis41';
+$db['local']['username'] = 'root';
 $db['local']['password'] = '';
 $db['local']['database'] = 'sliding_door';
 $db['local']['dbdriver'] = 'mysql';

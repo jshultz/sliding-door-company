@@ -54,33 +54,6 @@ class Site extends CI_Controller {
 
 		}
 
-		// Testing Code - REMOVE in Production
-
-		if ($_POST) {
-			$kv = array();
-			foreach ($_POST as $key => $value) {
-				$kv[] = "$key=$value";
-				echo $key . ' ' . $value;
-				$value = $key . ' ' . $value;
-				log_message('info', $key);
-
-			}
-			$query_string = join("&", $kv);
-			echo '<pre>Post Array:' . $query_string . '</pre>';
-		}
-		else {
-			$kv = array();
-			foreach ($_GET as $key => $value) {
-				$kv[] = "$key=$value";
-				echo $key . ' ' . $value;
-			}
-			$query_string = join("&", $kv);
-			echo '<pre>Get Array:' . $query_string . '</pre>';
-
-		}
-
-		// END Testing Code
-
 	}
 
 	public function email_contact() {
@@ -106,85 +79,108 @@ class Site extends CI_Controller {
 						$key = $x['Key'];
 						$source = $x['Source'];
 						$emailLevel = $x['EmailLevel'];
+						$lastSent = $x['lastSent'];
 						$lat = $x['lat'];
 						$lng = $x['lng'];
 
 						$location = $this->Location_model->getClosetLocation($lat, $lng);
 
-						$config['protocol'] = 'mail';
-						$config['wordwrap'] = FALSE;
-						$config['mailtype'] = 'html';
-						$config['charset'] = 'utf-8';
-						$config['crlf'] = "\r\n";
-						$config['newline'] = "\r\n";
+						$date1 = new DateTime("now");
+						$date2 = new DateTime($lastSent);
+						var_dump($date1);
 
-						$this->email->initialize($config);
+						var_dump($date1 == $date2);
+						var_dump($date1 < $date2);
+						var_dump($date1 > $date2);
 
-						$fullname = $firstName . ' ' . $lastName;
+						$interval = date_diff($date2, $date1);
+						$timePassed =  $interval->format('%R%a days');
 
-						$data['firstname'] = $firstName;
-						$data['lastname'] = $lastName;
-						$data['cust_email'] = $cust_email;
-						$data['key'] = $key;
+						var_dump($timePassed);
 
-						$data['style'] = 'style test';
-						$data['size'] = 'size test';
-						$data['panels'] = 'panels test';
-						$data['price'] = 'price test';
+						if (($timePassed == 0) || ($timePassed > 7))
+						{
 
-						$count = 1;
+							$config['protocol'] = 'mail';
+							$config['wordwrap'] = FALSE;
+							$config['mailtype'] = 'html';
+							$config['charset'] = 'utf-8';
+							$config['crlf'] = "\r\n";
+							$config['newline'] = "\r\n";
 
-						if ($count == 1) {
-							foreach ($location as $place) {
+							$this->email->initialize($config);
 
-								$data['maplink'] = $place['map_link'];
-								$data['location'] = $place['location'];
-								$data['address'] = $place['address'];
-								$data['city'] = $place['city'];
-								$data['state'] = $place['state'];
-								$data['zip'] = $place['zip'];
-								$data['telephone'] = $place['telephone'];
-								$data['email'] = $place['email'];
+							$fullname = $firstName . ' ' . $lastName;
+
+							$data['firstname'] = $firstName;
+							$data['lastname'] = $lastName;
+							$data['cust_email'] = $cust_email;
+							$data['key'] = $key;
+
+							$data['style'] = 'style test';
+							$data['size'] = 'size test';
+							$data['panels'] = 'panels test';
+							$data['price'] = 'price test';
+
+							$count = 1;
+
+							if ($count == 1) {
+								foreach ($location as $place) {
+
+									$data['maplink'] = $place['map_link'];
+									$data['location'] = $place['location'];
+									$data['address'] = $place['address'];
+									$data['city'] = $place['city'];
+									$data['state'] = $place['state'];
+									$data['zip'] = $place['zip'];
+									$data['telephone'] = $place['telephone'];
+									$data['email'] = $place['email'];
+								}
 							}
-						}
 
 
-						$this->email->from($cust_email, $fullname);
+							$this->email->from($cust_email, $fullname);
 
-						$this->email->to($cust_email, $fullname);
+							$this->email->to($cust_email, $fullname);
 
 
 
-						switch ($emailLevel) {
-							case 0:
-								$this->email->subject('Thank You For Signing Up');
-								$data['special'] = FALSE;
-								$data['message'] = '<p>Thank you for designing your beautiful new closet doors with us. Your next step is sharing the specs of your custom order with the showroom below for more detailed pricing and options.</p>';
+							switch ($emailLevel) {
+								case 0:
+									$this->email->subject('Thank You For Signing Up');
+									$data['special'] = '0';
+									$data['message'] = '<p>Thank you for designing your beautiful new closet doors with us. Your next step is sharing the specs of your custom order with the showroom below for more detailed pricing and options.</p>';
 
-								break;
-							case 1:
-								$this->email->subject('Thank You From The Sliding Door Company');
-								$data['special'] = FALSE;
-								$data['message'] = "<p>You're invited to our " . $place['city']  . "showroom for a free personalized
+									break;
+								case 1:
+									$this->email->subject('Thank You From The Sliding Door Company');
+									$data['special'] = '0';
+									$data['message'] = "<p>You're invited to our " . $place['city']  . "showroom for a free personalized
 													consultation! You'll get one-on-one assistance from our trained experts and a
 													first-hand look at your material options.</p>";
-								break;
-							case 2:
-								$this->email->subject('Here is something special from The Sliding Door Company!');
-								$data['special'] = TRUE;
-								$data['message'] = "<p>You’re invited to our " . $place['city'] . " showroom for a free personalized
+									break;
+								case 2:
+									$this->email->subject('Here is something special from The Sliding Door Company!');
+									$data['special'] = '1';
+									$data['message'] = "<p>You’re invited to our " . $place['city'] . " showroom for a free personalized
 													consultation! You’ll get one-on-one assistance from our trained experts and a
 													first-hand look at your material options.</p>";
-								break;
+									break;
+							}
+
+							$email = $this->load->view('email/email-one', $data, TRUE);
+
+							$this->email->message($email);
+
+							$this->email->send();
+
+							$this->Clients_model->updateCount($cust_email);
+
+							$this->Clients_model->updateDate($cust_email);
+
 						}
 
-						$email = $this->load->view('email/email-one', $data, TRUE);
 
-						$this->email->message($email);
-
-						$this->email->send();
-
-						$this->Clients_model->updateCount($cust_email);
 
 					}
 
