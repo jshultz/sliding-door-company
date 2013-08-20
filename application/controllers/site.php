@@ -87,18 +87,14 @@ class Site extends CI_Controller {
 
 						$date1 = new DateTime("now");
 						$date2 = new DateTime($lastSent);
-						var_dump($date1);
 
-						var_dump($date1 == $date2);
-						var_dump($date1 < $date2);
-						var_dump($date1 > $date2);
 
 						$interval = date_diff($date2, $date1);
-						$timePassed =  $interval->format('%R%a days');
+						$timePassed =  $interval->format('%R%a');
 
-						var_dump($timePassed);
 
-						if (($timePassed == 0) || ($timePassed > 7))
+
+						if (($lastSent == '0000-00-00') || ($timePassed > 7))
 						{
 
 							$config['protocol'] = 'mail';
@@ -208,20 +204,8 @@ class Site extends CI_Controller {
 	
 	}
 
-	public function emailone() {
-		$this->load->view('email/email-one');
-	}
-
-	public function emailtwo() {
-		$this->load->view('email/email-two');
-	}
-
-	public function emailthree() {
-		$this->load->view('email/email-three');
-	}
-
-	public function test() {
-		$this->load->view('geocodetest');
+	public function consultation() {
+		
 	}
 }
 
