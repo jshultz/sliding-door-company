@@ -42,6 +42,9 @@ class Site extends CI_Controller {
 			$phone = $this->input->get_post('Phone', TRUE);
 			$email = $this->input->get_post('Email', TRUE);
 			$source = $this->input->get_post('Source', TRUE);
+			$estimateStyle = $this->input->get_post('estimateStyle', TRUE);
+			$estimateSize = $this->input->get_post('estimateSize', TRUE);
+			$estimatePanels = $this->input->get_post('estimatePanels', TRUE);
 
 			$city = '';
 
@@ -50,9 +53,36 @@ class Site extends CI_Controller {
 			$lat = $pieces[0];
 			$lng = $pieces[1];
 
-			$this->Clients_model->create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng);
+			$this->Clients_model->create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng, $estimateStyle, $estimateSize, $estimatePanels);
 
 		}
+
+		// Testing Code - REMOVE in Production
+
+		if ($_POST) {
+			$kv = array();
+			foreach ($_POST as $key => $value) {
+				$kv[] = "$key=$value";
+				echo $key . ' ' . $value;
+				$value = $key . ' ' . $value;
+				log_message('info', $key);
+
+			}
+			$query_string = join("&", $kv);
+			echo '<pre>Post Array:' . $query_string . '</pre>';
+		}
+		else {
+			$kv = array();
+			foreach ($_GET as $key => $value) {
+				$kv[] = "$key=$value";
+				echo $key . ' ' . $value;
+			}
+			$query_string = join("&", $kv);
+			echo '<pre>Get Array:' . $query_string . '</pre>';
+
+		}
+
+		// END Testing Code
 
 	}
 
@@ -205,7 +235,7 @@ class Site extends CI_Controller {
 	}
 
 	public function consultation() {
-		
+		$this->load->view('landing/landing-view');
 	}
 }
 

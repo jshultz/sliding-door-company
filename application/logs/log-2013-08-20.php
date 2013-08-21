@@ -449,3 +449,116 @@ DEBUG - 2013-08-20 07:25:30 --> UTF-8 Support Enabled
 DEBUG - 2013-08-20 07:25:30 --> URI Class Initialized
 DEBUG - 2013-08-20 07:25:30 --> Router Class Initialized
 ERROR - 2013-08-20 07:25:30 --> 404 Page Not Found --> favicon.ico
+DEBUG - 2013-08-20 16:54:17 --> Config Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Hooks Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Utf8 Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> UTF-8 Support Enabled
+DEBUG - 2013-08-20 16:54:17 --> URI Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Router Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Output Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Security Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Input Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-20 16:54:17 --> Language Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Loader Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Helper loaded: form_helper
+DEBUG - 2013-08-20 16:54:17 --> Helper loaded: url_helper
+DEBUG - 2013-08-20 16:54:17 --> Helper loaded: email_helper
+DEBUG - 2013-08-20 16:54:17 --> Helper loaded: string_helper
+DEBUG - 2013-08-20 16:54:17 --> Database Driver Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Email Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Google Maps Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Model Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Model Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> Controller Class Initialized
+DEBUG - 2013-08-20 16:54:17 --> XSS Filtering completed
+DEBUG - 2013-08-20 16:54:17 --> XSS Filtering completed
+DEBUG - 2013-08-20 16:54:17 --> XSS Filtering completed
+DEBUG - 2013-08-20 16:54:17 --> XSS Filtering completed
+DEBUG - 2013-08-20 16:54:17 --> XSS Filtering completed
+DEBUG - 2013-08-20 16:54:17 --> XSS Filtering completed
+DEBUG - 2013-08-20 16:54:17 --> XSS Filtering completed
+DEBUG - 2013-08-20 16:54:17 --> XSS Filtering completed
+INFO  - 2013-08-20 16:54:17 --> FirstName
+INFO  - 2013-08-20 16:54:17 --> LastName
+INFO  - 2013-08-20 16:54:17 --> Address
+INFO  - 2013-08-20 16:54:17 --> State
+INFO  - 2013-08-20 16:54:17 --> Zip
+INFO  - 2013-08-20 16:54:17 --> Phone
+INFO  - 2013-08-20 16:54:17 --> Email
+INFO  - 2013-08-20 16:54:17 --> Source
+DEBUG - 2013-08-20 16:54:17 --> Final output sent to browser
+DEBUG - 2013-08-20 16:54:17 --> Total execution time: 0.4705
+DEBUG - 2013-08-20 17:04:59 --> Config Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Hooks Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Utf8 Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> UTF-8 Support Enabled
+DEBUG - 2013-08-20 17:04:59 --> URI Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Router Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Output Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Security Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Input Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-20 17:04:59 --> Language Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Loader Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Helper loaded: form_helper
+DEBUG - 2013-08-20 17:04:59 --> Helper loaded: url_helper
+DEBUG - 2013-08-20 17:04:59 --> Helper loaded: email_helper
+DEBUG - 2013-08-20 17:04:59 --> Helper loaded: string_helper
+DEBUG - 2013-08-20 17:04:59 --> Database Driver Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Email Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Google Maps Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Model Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Model Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> Controller Class Initialized
+DEBUG - 2013-08-20 17:04:59 --> XSS Filtering completed
+DEBUG - 2013-08-20 17:04:59 --> XSS Filtering completed
+DEBUG - 2013-08-20 17:04:59 --> XSS Filtering completed
+DEBUG - 2013-08-20 17:04:59 --> XSS Filtering completed
+DEBUG - 2013-08-20 17:04:59 --> XSS Filtering completed
+DEBUG - 2013-08-20 17:04:59 --> XSS Filtering completed
+DEBUG - 2013-08-20 17:04:59 --> XSS Filtering completed
+DEBUG - 2013-08-20 17:04:59 --> XSS Filtering completed
+INFO  - 2013-08-20 17:05:01 --> FirstName
+INFO  - 2013-08-20 17:05:01 --> LastName
+INFO  - 2013-08-20 17:05:01 --> Address
+INFO  - 2013-08-20 17:05:01 --> State
+INFO  - 2013-08-20 17:05:01 --> Zip
+INFO  - 2013-08-20 17:05:01 --> Phone
+INFO  - 2013-08-20 17:05:01 --> Email
+INFO  - 2013-08-20 17:05:01 --> Source
+DEBUG - 2013-08-20 17:05:01 --> Final output sent to browser
+DEBUG - 2013-08-20 17:05:01 --> Total execution time: 1.7502
+DEBUG - 2013-08-20 17:49:06 --> Config Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Hooks Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Utf8 Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> UTF-8 Support Enabled
+DEBUG - 2013-08-20 17:49:06 --> URI Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Router Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> No URI present. Default controller set.
+DEBUG - 2013-08-20 17:49:06 --> Output Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Security Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Input Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-20 17:49:06 --> Language Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Loader Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Helper loaded: form_helper
+DEBUG - 2013-08-20 17:49:06 --> Helper loaded: url_helper
+DEBUG - 2013-08-20 17:49:06 --> Helper loaded: email_helper
+DEBUG - 2013-08-20 17:49:06 --> Helper loaded: string_helper
+DEBUG - 2013-08-20 17:49:06 --> Database Driver Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Email Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Google Maps Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Model Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Model Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Controller Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> File loaded: application/views/welcome_message.php
+DEBUG - 2013-08-20 17:49:06 --> Final output sent to browser
+DEBUG - 2013-08-20 17:49:06 --> Total execution time: 0.0308
+DEBUG - 2013-08-20 17:49:06 --> Config Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Hooks Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Utf8 Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> UTF-8 Support Enabled
+DEBUG - 2013-08-20 17:49:06 --> URI Class Initialized
+DEBUG - 2013-08-20 17:49:06 --> Router Class Initialized
+ERROR - 2013-08-20 17:49:06 --> 404 Page Not Found --> favicon.ico
