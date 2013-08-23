@@ -124,8 +124,64 @@
 						</div>
 					</div>
 				</div>
+				<div class="row">
+					<div class="small-8">
+						<div class="row">
+							<div class="small-3 columns">
 
+							</div>
+							<div class="small-9 columns">
+								<div class="row">
+									<div class="small-3 columns">
+										<label>Style:</label>
+									</div>
+									<div class="small-9 columns">
+										Something Here
+									</div>
+								</div>
+								<div class="row">
+									<div class="small-3 columns">
+										<label>Size:</label>
+									</div>
+									<div class="small-9 columns">
+										Something Here
+									</div>
+								</div>
+								<div class="row">
+									<div class="small-3 columns">
+										<label>Number of Panels:</label>
+									</div>
+									<div class="small-9 columns">
+										Something Here
+									</div>
+								</div>
+								<div class="row">
+									<div class="small-3 columns">
+										<label>Base Price<sup>*</sup>:</label>
+									</div>
+									<div class="small-9 columns">
+										Something Here
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
 			</fieldset>
+			<div class="row">
+				<div class="small-9 columns">
+					<div class="row">
+						<div class="small-12 columns">
+							<p>Your Nearest Location</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="small-3 columns">
+					<input class="button" type="submit">
+				</div>
+			</div>
 		</form>
 	</div>
 
