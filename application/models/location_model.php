@@ -106,55 +106,98 @@
 
 		}
 
-		function getClosetLocation($lat, $lng) {
-
-			$results = array();
+		function getClosetLocation($lat, $lng, $zip) {
 
 
-			$this->db->select('*')->from('locations');
+			$this->db->select('*')
+				->from('zipcodes');
 
-			$location = $this->db->get();
-			foreach ($location->result_array() as $address) {
-
-				$point1 = array(
-					'lat' => $lat,
-					'long' => $lng
-				);
-
-				$point2 = array(
-					'lat' => $address['lat'],
-					'long' => $address['lng']
-				);
-
-				$distance = $this->distance_slc($lat, $lng, $address['lat'], $address['lng']);
-				$address['distance'] = $distance;
-
-				//$distance = $this->calc_distance($point1, $point2);
-
-				if ($distance < 500.0000) {
-					$results[] = $address;
+			$query = $this->db->get();
 
 
-					$sortArray = array();
+			$ziprow = $query->row_array();
 
-					foreach($results as $result){
-						foreach($result as $key=>$value){
-							if(!isset($sortArray[$key])){
-								$sortArray[$key] = array();
+			foreach ($query->result() as $row)
+			{
+				$low = $row->low;
+				$high = $row->high;
+
+				if (($zip <= $high) && ($zip >= $low)) {
+
+
+
+					if ($row->nostore == '1') {
+						return null;
+					} elseif ($row->usezip == '1') {
+
+						$results = array();
+
+
+						$this->db->select('*')->from('locations');
+
+						$location = $this->db->get();
+						foreach ($location->result_array() as $address) {
+
+							$point1 = array(
+								'lat' => $lat,
+								'long' => $lng
+							);
+
+							$point2 = array(
+								'lat' => $address['lat'],
+								'long' => $address['lng']
+							);
+
+							$distance = $this->distance_slc($lat, $lng, $address['lat'], $address['lng']);
+							$address['distance'] = $distance;
+
+							//$distance = $this->calc_distance($point1, $point2);
+
+							if ($distance < 100.0000) {
+								$results[] = $address;
+
+
+								$sortArray = array();
+
+								foreach($results as $result){
+									foreach($result as $key=>$value){
+										if(!isset($sortArray[$key])){
+											$sortArray[$key] = array();
+										}
+										$sortArray[$key][] = $value;
+									}
+								}
+
+								$orderby = "distance"; //change this to whatever key you want from the array
+
+								array_multisort($sortArray[$orderby],SORT_ASC,$results);
+
+
 							}
-							$sortArray[$key][] = $value;
 						}
+
+						return $results;
+
+					} else {
+
+
+
+						$this->db->select('*')
+							->from('locations')
+							->where('id', $row->storeid);
+						$query = $this->db->get();
+
+						return $query;
+
+
 					}
 
-					$orderby = "distance"; //change this to whatever key you want from the array
-
-					array_multisort($sortArray[$orderby],SORT_ASC,$results);
-
-
 				}
+
 			}
 
-			return $results;
+
+
 
 			}
 

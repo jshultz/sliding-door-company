@@ -45,7 +45,6 @@ class Site extends CI_Controller {
 			$estimateStyle = $this->input->get_post('estimateStyle', TRUE);
 			$estimateSize = $this->input->get_post('estimateSize', TRUE);
 			$estimatePanels = $this->input->get_post('estimatePanels', TRUE);
-
 			$city = '';
 
 			$latlng  = $this->geocodeit->geocode($address,$city,$zip);
@@ -110,10 +109,15 @@ class Site extends CI_Controller {
 						$source = $x['Source'];
 						$emailLevel = $x['EmailLevel'];
 						$lastSent = $x['lastSent'];
+						$estimateStyle = $x['estimateStyle'];
+						$estimateSize = $x['estimateSize'];
+						$estimatePanels = $x['estimatePanels'];
+
 						$lat = $x['lat'];
 						$lng = $x['lng'];
 
-						$location = $this->Location_model->getClosetLocation($lat, $lng);
+						$location = $this->Location_model->getClosetLocation($lat, $lng, $zip);
+
 
 						$date1 = new DateTime("now");
 						$date2 = new DateTime($lastSent);
@@ -143,25 +147,36 @@ class Site extends CI_Controller {
 							$data['cust_email'] = $cust_email;
 							$data['key'] = $key;
 
-							$data['style'] = 'style test';
-							$data['size'] = 'size test';
-							$data['panels'] = 'panels test';
-							$data['price'] = 'price test';
+							$data['style'] = $estimateStyle;
+							$data['size'] = $estimateSize;
+							$data['panels'] = $estimatePanels;
+							$data['price'] = '';
 
 							$count = 1;
 
 							if ($count == 1) {
-								foreach ($location as $place) {
 
-									$data['maplink'] = $place['map_link'];
-									$data['location'] = $place['location'];
-									$data['address'] = $place['address'];
-									$data['city'] = $place['city'];
-									$data['state'] = $place['state'];
-									$data['zip'] = $place['zip'];
-									$data['telephone'] = $place['telephone'];
-									$data['email'] = $place['email'];
+								if ($location == null) {
+									$data['nolocation'] = '1';
+
+								} else {
+									$data['nolocation'] = '0';
+
+									foreach ($location->result_array() as $place) {
+
+
+										$data['maplink'] = $place['map_link'];
+										$data['location'] = $place['location'];
+										$data['address'] = $place['address'];
+										$data['city'] = $place['city'];
+										$data['state'] = $place['state'];
+										$data['zip'] = $place['zip'];
+										$data['telephone'] = $place['telephone'];
+										$data['email'] = $place['email'];
+									}
+
 								}
+
 							}
 
 
@@ -175,28 +190,44 @@ class Site extends CI_Controller {
 								case 0:
 									$this->email->subject('Thank You For Signing Up');
 									$data['special'] = '0';
-									$data['message'] = '<p>Thank you for designing your beautiful new closet doors with us. Your next step is sharing the specs of your custom order with the showroom below for more detailed pricing and options.</p>';
+									$data['message'] = "<p>Thank you for designing your beautiful new closet doors with us. Your next step is sharing the specs of your custom order with the showroom below for more detailed pricing and options.</p>";
 
 									break;
 								case 1:
 									$this->email->subject('Thank You From The Sliding Door Company');
 									$data['special'] = '0';
-									$data['message'] = "<p>You're invited to our " . $place['city']  . "showroom for a free personalized
+									if ($location == null) {
+										$data['message'] = '<p>Thank you for designing your beautiful new closet doors with us. Your next step is sharing the specs of your custom order with the showroom below for more detailed pricing and options.</p>';
+									} else {
+										$data['message'] = "<p>You're invited to our " . $place['city']  . "showroom for a free personalized
 													consultation! You'll get one-on-one assistance from our trained experts and a
 													first-hand look at your material options.</p>";
+									}
+
 									break;
 								case 2:
 									$this->email->subject('Here is something special from The Sliding Door Company!');
 									$data['special'] = '1';
-									$data['message'] = "<p>You’re invited to our " . $place['city'] . " showroom for a free personalized
+									if ($location == null) {
+										$data['message'] = "<p>Schedule a consultation with our showroom headquarters before " . date('Y-m-d', strtotime("+30 days")) . " to take advantage of this one-time offer!</p>";
+									} else {
+										$data['message'] = "<p>You’re invited to our " . $place['city'] . " showroom for a free personalized
 													consultation! You’ll get one-on-one assistance from our trained experts and a
 													first-hand look at your material options.</p>";
+									}
+
 									break;
 							}
 
+
+
 							$email = $this->load->view('email/email-one', $data, TRUE);
 
+
+							echo $email;
+							exit;
 							$this->email->message($email);
+
 
 							$this->email->send();
 
@@ -225,7 +256,7 @@ class Site extends CI_Controller {
 
 			$email = $this->input->get_post('email', TRUE);
 			$Key = $this->input->get_post('key', TRUE);
-			
+
 			$this->Clients_model->unsubscribeEmail($email, $Key);
 
 			$this->load->view('unsubscribed');

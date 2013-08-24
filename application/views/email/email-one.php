@@ -1,3 +1,4 @@
+
 <html>
 <head>
 	<title>DYO_email-v3-1</title>
@@ -125,6 +126,8 @@
 		<td colspan="1" style="vertical-align: top;">
 			<div style="width:240px; padding: 0 20px;">
 
+				<?php if ($nolocation != '1') { ?>
+
 				<h3>Your Showroom</h3>
 
 				<p>
@@ -182,14 +185,14 @@
 						}
 					?><br/>
 					M-F: 9am-6pm
-				</p>
+				</p> <?php } ?>
 
 			</div>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="text-align: center; vertical-align: middle; height: 100px">
-			<a href=""><img src="http://sliding.osmprojects.com/assets/images/email-one/free-consultation.png"></a>
+			<?php echo '<a href="http://sliding.osmprojects.com/site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="http://sliding.osmprojects.com/assets/images/email-one/free-consultation.png"></a>
 		</td>
 	</tr>
 	<tr>

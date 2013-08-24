@@ -13,7 +13,7 @@ class Clients_model extends CI_Model {
 		parent::__construct();
 	}
 
-	function create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng) {
+	function create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng, $estimateStyle, $estimateSize, $estimatePanels) {
 
 		$data = array(
 			'FirstName' => $firstName,
@@ -26,6 +26,9 @@ class Clients_model extends CI_Model {
 			'Source' => $source,
 			'lat' => $lat,
 			'lng' => $lng,
+			'estimateStyle' => $estimateStyle,
+			'estimateSize' => $estimateSize,
+			'estimatePanels' => $estimatePanels,
 			'Key'   => random_string('alnum', 45)
 		);
 
