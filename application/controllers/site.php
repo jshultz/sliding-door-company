@@ -158,9 +158,11 @@ class Site extends CI_Controller {
 
 								if ($location == null) {
 									$data['nolocation'] = '1';
+									$data['email'] = 'contact@slidingdoorco.com';
 
 								} else {
 									$data['nolocation'] = '0';
+
 
 									foreach ($location->result_array() as $place) {
 
@@ -223,9 +225,6 @@ class Site extends CI_Controller {
 
 							$email = $this->load->view('email/email-one', $data, TRUE);
 
-
-							echo $email;
-							exit;
 							$this->email->message($email);
 
 
@@ -249,6 +248,71 @@ class Site extends CI_Controller {
 		}
 
 	}
+
+	public function email_store() {
+
+		if (isset($_GET) || isset($_POST)) {
+
+			$store_email = $this->input->get_post('store_email', TRUE);
+			$location = $this->input->get_post('location', TRUE);
+			$fullname = $this->input->get_post('fullname', TRUE);
+			$zip = $this->input->get_post('zip', TRUE);
+			$phone = $this->input->get_post('phone', TRUE);
+			$cust_email = $this->input->get_post('cust_email', TRUE);
+			$comments = $this->input->get_post('comments', TRUE);
+			$date = $this->input->get_post('date', TRUE);
+			$time = $this->input->get_post('time', TRUE);
+			$style = $this->input->get_post('style', TRUE);
+			$size = $this->input->get_post('size', TRUE);
+			$panels = $this->input->get_post('panels', TRUE);
+			$price = $this->input->get_post('price', TRUE);
+			$nolocation = $this->input->get_post('nolocation', TRUE);
+		}
+
+		$message = 'A Consultation Request has been received for the following customer: ';
+
+		$message .= '<p>Full Name: ' . $fullname . '</p>';
+		$message .= '<p>Zip: ' . $zip . '</p>';
+		$message .= '<p>Phone: ' . $phone . '</p>';
+		$message .= '<p>Customer Email: ' . $cust_email . '</p>';
+		$message .= '<p>Comments: ' . $comments . '</p>';
+		$message .= 'vRequested Date: ' . $date . '</p>';
+		$message .= '<p>Requested Time: ' . $time . '</p>';
+		$message .= '<p>Style: ' . $style . '</p>';
+		$message .= '<p>Size: ' . $size . '</p>';
+		$message .= '<p>Panels: ' . $panels . '</p>';
+		$message .= '<p>Price: ' . $price . '</p>';
+
+		$config['protocol'] = 'mail';
+		$config['wordwrap'] = FALSE;
+		$config['mailtype'] = 'html';
+		$config['charset'] = 'utf-8';
+		$config['crlf'] = "\r\n";
+		$config['newline'] = "\r\n";
+
+		$this->email->initialize($config);
+
+		$this->email->from($cust_email, $fullname);
+
+		$store_email = 'jasshultz@gmail.com';
+
+		$this->email->to($store_email, $location);
+
+		$this->email->subject('Consultation Request');
+
+		$this->email->message($message);
+
+		$this->email->send();
+
+		if ($nolocation == '1') {
+			$data['thankyou'] = 'Thank you for requesting your telephone consultation. We’ll contact you to set up a date and time that best works for you.';
+
+		} else {
+			$data['thankyou'] = 'Thank you for requesting your showroom visit and consultation. We’ll contact you to set up a date and time that best works for you.';
+		}
+
+		$this->load->view('/landing/thankyou', $data);
+	}
 	
 	public function unsubscribe() {
 
@@ -266,7 +330,80 @@ class Site extends CI_Controller {
 	}
 
 	public function consultation() {
-		$this->load->view('landing/landing-view');
+		if (isset($_GET) || isset($_POST)) {
+
+			$email = $this->input->get_post('email', TRUE);
+			$Key = $this->input->get_post('key', TRUE);
+
+			$customer = $this->Clients_model->getCustomer($email, $Key);
+
+			foreach ($customer->result_array() as $x) {
+
+
+				$firstName = $x['FirstName'];
+				$lastName = $x['LastName'];
+				$address = $x['Address'];
+				$state = $x['State'];
+				$zip = $x['Zip'];
+				$phone = $x['Phone'];
+				$cust_email = $x['Email'];
+				$key = $x['Key'];
+				$source = $x['Source'];
+				$emailLevel = $x['EmailLevel'];
+				$lastSent = $x['lastSent'];
+				$estimateStyle = $x['estimateStyle'];
+				$estimateSize = $x['estimateSize'];
+				$estimatePanels = $x['estimatePanels'];
+
+				$lat = $x['lat'];
+				$lng = $x['lng'];
+			}
+
+			$data['firstname'] = $firstName;
+			$data['lastname'] = $lastName;
+			$data['fullname'] = $firstName . ' ' . $lastName;
+			$data['phone'] = $phone;
+			$data['cust_email'] = $cust_email;
+			$data['key'] = $key;
+			$data['cust_zip'] = $zip;
+
+			$data['style'] = $estimateStyle;
+			$data['size'] = $estimateSize;
+			$data['panels'] = $estimatePanels;
+			$data['price'] = '';
+
+			$location = $this->Location_model->getClosetLocation($lat, $lng, $zip);
+
+			if ($location == null) {
+				$data['nolocation'] = '1';
+				$data['store_email'] = 'contact@slidingdoorco.com';
+				$data['location'] = 'Internet Only';
+
+			} else {
+				$data['nolocation'] = '0';
+
+
+				foreach ($location->result_array() as $place) {
+
+
+					$data['maplink'] = $place['map_link'];
+					$data['location'] = $place['location'];
+					$data['address'] = $place['address'];
+					$data['city'] = $place['city'];
+					$data['state'] = $place['state'];
+					$data['zip'] = $place['zip'];
+					$data['telephone'] = $place['telephone'];
+					$data['store_email'] = $place['email'];
+				}
+
+			}
+
+
+			$this->load->view('landing/landing-view', $data);
+
+		}
+
+
 	}
 }
 

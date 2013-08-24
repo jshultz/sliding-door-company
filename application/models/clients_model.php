@@ -110,6 +110,28 @@ class Clients_model extends CI_Model {
 
 	}
 
+	function getCustomer($email, $key) {
+
+		$this->db->select('*')
+			->from('clients')
+			->where('email', $email)
+			->where('key', $key);
+
+		$query = $this->db->get();
+
+		$row = $query->row_array();
+		$num = $query->num_rows();
+
+		if ($num < 1)
+		{
+			return null;
+
+		} else {
+			return $query;
+		}
+
+	}
+
 
 
 	function updateCount($email) {

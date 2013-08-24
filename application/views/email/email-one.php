@@ -204,7 +204,7 @@
 					<?php
 						if ((isset($email) && (strlen($email) > 0))) {
 
-							echo '<a href="' . $email . '">' . $email . '</a>';
+							echo '<a href="mailto:' . $email . '">' . $email . '</a>';
 						}
 					?>
 
