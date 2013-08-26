@@ -96,3 +96,9 @@ INFO  - 2013-08-26 12:43:52 --> cost
 INFO  - 2013-08-26 12:43:52 --> Source
 DEBUG - 2013-08-26 12:43:52 --> Final output sent to browser
 DEBUG - 2013-08-26 12:43:52 --> Total execution time: 0.3824
+ERROR - 2013-08-26 13:48:07 --> 404 Page Not Found --> images
+ERROR - 2013-08-26 13:48:07 --> 404 Page Not Found --> images
+ERROR - 2013-08-26 13:48:07 --> 404 Page Not Found --> images
+ERROR - 2013-08-26 13:48:07 --> 404 Page Not Found --> images
+ERROR - 2013-08-26 13:48:07 --> 404 Page Not Found --> images
+ERROR - 2013-08-26 13:48:07 --> 404 Page Not Found --> images

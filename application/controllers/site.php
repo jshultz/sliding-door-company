@@ -57,32 +57,7 @@ class Site extends CI_Controller {
 
 		}
 
-		// Testing Code - REMOVE in Production
 
-		if ($_POST) {
-			$kv = array();
-			foreach ($_POST as $key => $value) {
-				$kv[] = "$key=$value";
-				echo $key . ' ' . $value;
-				$value = $key . ' ' . $value;
-				log_message('info', $key);
-
-			}
-			$query_string = join("&", $kv);
-			echo '<pre>Post Array:' . $query_string . '</pre>';
-		}
-		else {
-			$kv = array();
-			foreach ($_GET as $key => $value) {
-				$kv[] = "$key=$value";
-				echo $key . ' ' . $value;
-			}
-			$query_string = join("&", $kv);
-			echo '<pre>Get Array:' . $query_string . '</pre>';
-
-		}
-
-		// END Testing Code
 
 	}
 
@@ -227,6 +202,9 @@ class Site extends CI_Controller {
 
 							$email = $this->load->view('email/email-one', $data, TRUE);
 
+							echo $email;
+							exit();
+
 							$this->email->message($email);
 
 
@@ -296,7 +274,7 @@ class Site extends CI_Controller {
 
 		$this->email->from($cust_email, $fullname);
 
-		$store_email = 'jasshultz@gmail.com';
+//		$store_email = 'jasshultz@gmail.com';
 
 		$this->email->to($store_email, $location);
 

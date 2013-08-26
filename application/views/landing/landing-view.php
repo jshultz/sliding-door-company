@@ -18,9 +18,11 @@
 <body>
 
 <div class="row">
-	<div class="large-6 column large-offset-3 text-center">
-		<h3>Consultation Request Form</h3>
+	<div class="large-4 columns"><img src="/assets/images/site/sliding-door-company.png" width="235" height="123" alt=""></div>
+	<div class="large-6 columns">
+		<h3 style="margin-top: 40px">Consultation Request Form</h3>
 	</div>
+	<div class="large-2 columns"></div>
 </div>
 
 <div class="row">
@@ -97,7 +99,7 @@
 					<div class="small-12">
 						<div class="row">
 							<div class="small-3 columns">
-								<label for="right-label" class="datepicker">Preferred Date</label>
+								<label for="right-label" class="datepicker right inline">Preferred Date</label>
 							</div>
 							<div class="small-9 columns">
 								<input type="text" name="date" id="datepicker" placeholder="Please pick a date" value="">
@@ -200,7 +202,7 @@
 
 				</div>
 				<div class="small-3 columns">
-					<input class="button" value="Request Consultation" type="submit">
+					<input src="/assets/images/email-one/consultation-button.png" value="Request Consultation" type="image">
 				</div>
 			</div>
 		</form>

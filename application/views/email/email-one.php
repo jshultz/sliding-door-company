@@ -23,13 +23,14 @@
 			<table width="100%">
 				<td style="vertical-align: middle; text-align: center; width: 65px"><a style="text-transform: uppercase; text-decoration: none; display: block; margin: 0 auto; color: #939598; font-size: 8px; border-right: 1px solid gray;" href="http://www.slidingdoorco.com/showrooms">Showrooms</a></td>
 				<td style="vertical-align: middle; text-align: center; width: 65px"><a style="text-transform: uppercase; text-decoration: none; margin: 0 auto; color: #939598; font-size: 8px" href="http://www.slidingdoorco.com/help/contact">Contact Us</a></td>
-				<td style="width: 300px"></td>
+				<td style="width: 280px"></td>
 				<td style="width: 20px; text-align: center"><a style="margin: 0 auto;" href="https://www.facebook.com/TheSlidingDoorCo"><img
 							border="0" src="http://sliding.osmprojects.com/assets/images/email-one/facebook.png" height="14px;"  alt=""></a></td>
 				<td style="width: 20px; text-align: center"><a style="margin: 0 auto;" href="http://twitter.com/#!/slidingdoorco"><img src="http://sliding.osmprojects.com/assets/images/email-one/twitter.png" height="14px"
 				                                                                                                                       alt=""></a></td>
 				<td style="width: 20px; text-align: center"><a style="margin: 0 auto;" href="http://www.youtube.com/slidingdoorcompany/"><img
 						<img src="http://sliding.osmprojects.com/assets/images/email-one/youtube.png" height="14px"  alt=""></a></td>
+				<td style="width:20px;"></td>
 			</table>
 		</td>
 
@@ -75,7 +76,7 @@
 		<td colspan="1" style="vertical-align: top;">
 			<div style="width:240px; padding: 0 20px; float: left">
 
-				<h3>Your Design</h3>
+				<h3 style="text-decoration: underline">Your Design</h3>
 
 				<p>
 					<strong>Style: </strong> <?php
@@ -196,7 +197,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2">
+		<td colspan="2" style="padding: 20px 0;">
 			<div style="padding: 0 20px; font-size: 12px; ">
 				<p>
 					For additional information regarding details, options and special pricing to the trade, please
@@ -204,7 +205,7 @@
 					<?php
 						if ((isset($email) && (strlen($email) > 0))) {
 
-							echo '<a href="mailto:' . $email . '">' . $email . '</a>';
+							echo ' <a href="mailto:' . $email . '">' . $email . '</a>';
 						}
 					?>
 
@@ -221,20 +222,20 @@
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2">
+		<td colspan="2" style="padding: 20px 0; background-color: #F0F0F0;">
 			<div style="padding: 0 20px; font-size: 10px">
 				<?php
 					if ((isset($cust_email) && (strlen($cust_email) > 0))) {
 
-						echo '<p><a style="color: #BFD730; text-decoration: none;" href="http://slidingdoorco.us5.list-manage1.com/subscribe/post?u=8f352881da294a071db8b8ed5&id=2d9fbec01c&MERGE0=' . $cust_email . '&MERGE1=' . $firstname . '&MERGE2=' . $lastname . '">SIGN UP FOR THE LATEST EVENTS AND OFFERS</a>
-				| <a href="http://sliding.osmprojects.com/site/unsubscribe?email=' . $cust_email . '&key=' . $key . '">Unsubscribe</a>
+						echo '<p><a style="color: #939598; text-decoration: none;" href="http://slidingdoorco.us5.list-manage1.com/subscribe/post?u=8f352881da294a071db8b8ed5&id=2d9fbec01c&MERGE0=' . $cust_email . '&MERGE1=' . $firstname . '&MERGE2=' . $lastname . '">SIGN UP FOR THE LATEST EVENTS AND OFFERS</a>
+				| <a style="color:939598" href="http://sliding.osmprojects.com/site/unsubscribe?email=' . $cust_email . '&key=' . $key . '">Unsubscribe</a>
 				</p>';
 					}
 				?>
 
 
 				<p>
-					The Sliding Door Company | 20235 Bahama St. | Chatsworth, CA 91311 | <a style="text-decoration: none;" href="http://slidingdoorco.com">slidingdoorco.com</a>
+					The Sliding Door Company | 20235 Bahama St. | Chatsworth, CA 91311 | <a style="text-decoration: none; color:#939598" href="http://slidingdoorco.com">slidingdoorco.com</a>
 				</p>
 			</div>
 		</td>
