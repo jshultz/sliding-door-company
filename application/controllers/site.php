@@ -56,32 +56,7 @@ class Site extends CI_Controller {
 
 		}
 
-		// Testing Code - REMOVE in Production
 
-		if ($_POST) {
-			$kv = array();
-			foreach ($_POST as $key => $value) {
-				$kv[] = "$key=$value";
-				echo $key . ' ' . $value;
-				$value = $key . ' ' . $value;
-				log_message('info', $key);
-
-			}
-			$query_string = join("&", $kv);
-			echo '<pre>Post Array:' . $query_string . '</pre>';
-		}
-		else {
-			$kv = array();
-			foreach ($_GET as $key => $value) {
-				$kv[] = "$key=$value";
-				echo $key . ' ' . $value;
-			}
-			$query_string = join("&", $kv);
-			echo '<pre>Get Array:' . $query_string . '</pre>';
-
-		}
-
-		// END Testing Code
 
 	}
 
