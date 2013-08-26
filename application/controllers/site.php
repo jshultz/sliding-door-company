@@ -45,6 +45,7 @@ class Site extends CI_Controller {
 			$estimateStyle = $this->input->get_post('estimateStyle', TRUE);
 			$estimateSize = $this->input->get_post('estimateSize', TRUE);
 			$estimatePanels = $this->input->get_post('estimatePanels', TRUE);
+			$cost = $this->input->get_post('cost', TRUE);
 			$city = '';
 
 			$latlng  = $this->geocodeit->geocode($address,$city,$zip);
@@ -52,11 +53,36 @@ class Site extends CI_Controller {
 			$lat = $pieces[0];
 			$lng = $pieces[1];
 
-			$this->Clients_model->create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng, $estimateStyle, $estimateSize, $estimatePanels);
+			$this->Clients_model->create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng, $estimateStyle, $estimateSize, $estimatePanels, $cost);
 
 		}
 
+		// Testing Code - REMOVE in Production
 
+		if ($_POST) {
+			$kv = array();
+			foreach ($_POST as $key => $value) {
+				$kv[] = "$key=$value";
+				echo $key . ' ' . $value;
+				$value = $key . ' ' . $value;
+				log_message('info', $key);
+
+			}
+			$query_string = join("&", $kv);
+			echo '<pre>Post Array:' . $query_string . '</pre>';
+		}
+		else {
+			$kv = array();
+			foreach ($_GET as $key => $value) {
+				$kv[] = "$key=$value";
+				echo $key . ' ' . $value;
+			}
+			$query_string = join("&", $kv);
+			echo '<pre>Get Array:' . $query_string . '</pre>';
+
+		}
+
+		// END Testing Code
 
 	}
 
@@ -87,6 +113,7 @@ class Site extends CI_Controller {
 						$estimateStyle = $x['estimateStyle'];
 						$estimateSize = $x['estimateSize'];
 						$estimatePanels = $x['estimatePanels'];
+						$price = $x['cost'];
 
 						$lat = $x['lat'];
 						$lng = $x['lng'];
@@ -125,7 +152,7 @@ class Site extends CI_Controller {
 							$data['style'] = $estimateStyle;
 							$data['size'] = $estimateSize;
 							$data['panels'] = $estimatePanels;
-							$data['price'] = '';
+							$data['price'] = $price;
 
 							$count = 1;
 
@@ -329,6 +356,7 @@ class Site extends CI_Controller {
 				$estimateStyle = $x['estimateStyle'];
 				$estimateSize = $x['estimateSize'];
 				$estimatePanels = $x['estimatePanels'];
+				$price = $x['cost'];
 
 				$lat = $x['lat'];
 				$lng = $x['lng'];
@@ -345,7 +373,7 @@ class Site extends CI_Controller {
 			$data['style'] = $estimateStyle;
 			$data['size'] = $estimateSize;
 			$data['panels'] = $estimatePanels;
-			$data['price'] = '';
+			$data['price'] = $price;
 
 			$location = $this->Location_model->getClosetLocation($lat, $lng, $zip);
 
