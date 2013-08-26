@@ -202,9 +202,6 @@ class Site extends CI_Controller {
 
 							$email = $this->load->view('email/email-one', $data, TRUE);
 
-							echo $email;
-							exit();
-
 							$this->email->message($email);
 
 
