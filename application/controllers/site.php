@@ -96,7 +96,9 @@ class Site extends CI_Controller {
 						$lat = $x['lat'];
 						$lng = $x['lng'];
 
-						$location = $this->Location_model->getClosetLocation($lat, $lng, $zip);
+                        $location = $this->Location_model->getClosetLocation($lat, $lng, $zip);
+                        echo $fullname . '<pre>Location: ';
+                        var_dump($location);
 
 						date_default_timezone_set( 'America/Los_Angeles' );
 
@@ -137,34 +139,46 @@ class Site extends CI_Controller {
 
 							if ($count == 1) {
 
-								if ($location == null) {
+								if (($location == null)) {
 									$data['nolocation'] = '1';
 									$data['email'] = 'contact@slidingdoorco.com';
 
 								} else {
 									$data['nolocation'] = '0';
+                                    echo $fullname . '<pre>Location: ';
+                                    var_dump(gettype($location));
 
-									echo '<pre>';
-									var_dump($firstName);
-									echo '<pre>';
-									var_dump($location);
-
-									foreach ($location->result_array() as $place) {
+                                    $loopcount = 1;
+                                    foreach ($location as $place) {
 
 
-										$data['maplink'] = $place['map_link'];
-										$data['location'] = $place['location'];
-										$data['address'] = $place['address'];
-										$data['city'] = $place['city'];
-										$data['state'] = $place['state'];
-										$data['zip'] = $place['zip'];
-										$data['telephone'] = $place['telephone'];
-										$data['email'] = $place['email'];
-									}
+
+
+                                        if ($loopcount == 1) {
+                                            $data['maplink'] = $place['map_link'];
+                                            $data['location'] = $place['location'];
+                                            $data['address'] = $place['address'];
+                                            $data['city'] = $place['city'];
+                                            $data['state'] = $place['state'];
+                                            $data['zip'] = $place['zip'];
+                                            $data['telephone'] = $place['telephone'];
+                                            $data['email'] = $place['email'];
+
+
+                                            $loopcount = 2;
+                                        }
+
+
+                                    }
+
+
 
 								}
 
 							}
+
+                            echo $fullname . '<pre>Data: ';
+                            var_dump($data);
 
 
 							$this->email->from($cust_email, $fullname);
@@ -213,11 +227,11 @@ class Site extends CI_Controller {
 							$this->email->message($email);
 
 
-							$this->email->send();
+//							$this->email->send();
 
-							$this->Clients_model->updateCount($cust_email);
+//							$this->Clients_model->updateCount($cust_email);
 
-							$this->Clients_model->updateDate($cust_email);
+//							$this->Clients_model->updateDate($cust_email);
 
 							echo 'emails sent';
 

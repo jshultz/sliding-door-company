@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database','email','googlemaps','geocodeit');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('form','url','email','string');
+$autoload['helper'] = array('form','url','email','string','array');
 
 
 /*

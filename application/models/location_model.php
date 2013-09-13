@@ -180,14 +180,28 @@
 
 					} else {
 
-
+                        $results = array();
 
 						$this->db->select('*')
 							->from('locations')
 							->where('id', $row->storeid);
 						$query = $this->db->get();
 
-						return $query;
+                        foreach ($query->result() as $address) {
+
+                            $results['location'] = $address->location;
+                            $results['address'] = $address->address;
+                            $results['Address_2'] = $address->Address_2;
+                            $results['city'] = $address->city;
+                            $results['state'] = $address->state;
+                            $results['zip'] = $address->zip;
+                            $results['telephone'] = $address->telephone;
+                            $results['email'] = $address->email;
+                            $results['map_link'] = $address->map_link;
+
+                        }
+
+						return $results;
 
 
 					}
