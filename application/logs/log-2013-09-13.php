@@ -58,3 +58,53 @@ DEBUG - 2013-09-13 08:24:28 --> File loaded: application/views/email/email-one.p
 DEBUG - 2013-09-13 08:24:28 --> File loaded: application/views/email/email-one.php
 DEBUG - 2013-09-13 08:24:28 --> File loaded: application/views/email/email-one.php
 DEBUG - 2013-09-13 08:24:28 --> File loaded: application/views/email/email-one.php
+DEBUG - 2013-09-13 08:25:45 --> Config Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Hooks Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Utf8 Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> UTF-8 Support Enabled
+DEBUG - 2013-09-13 08:25:45 --> URI Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Router Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Output Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Security Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Input Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-09-13 08:25:45 --> Language Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Loader Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Helper loaded: form_helper
+DEBUG - 2013-09-13 08:25:45 --> Helper loaded: url_helper
+DEBUG - 2013-09-13 08:25:45 --> Helper loaded: email_helper
+DEBUG - 2013-09-13 08:25:45 --> Helper loaded: string_helper
+DEBUG - 2013-09-13 08:25:45 --> Helper loaded: array_helper
+DEBUG - 2013-09-13 08:25:45 --> Database Driver Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Email Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Google Maps Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Model Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Model Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> Controller Class Initialized
+DEBUG - 2013-09-13 08:25:45 --> File loaded: application/views/email/email-one.php
+DEBUG - 2013-09-13 08:25:45 --> File loaded: application/views/email/email-one.php
+DEBUG - 2013-09-13 08:40:33 --> Config Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Hooks Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Utf8 Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> UTF-8 Support Enabled
+DEBUG - 2013-09-13 08:40:33 --> URI Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Router Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Output Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Security Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Input Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-09-13 08:40:33 --> Language Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Loader Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Helper loaded: form_helper
+DEBUG - 2013-09-13 08:40:33 --> Helper loaded: url_helper
+DEBUG - 2013-09-13 08:40:33 --> Helper loaded: email_helper
+DEBUG - 2013-09-13 08:40:33 --> Helper loaded: string_helper
+DEBUG - 2013-09-13 08:40:33 --> Helper loaded: array_helper
+DEBUG - 2013-09-13 08:40:33 --> Database Driver Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Email Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Google Maps Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Model Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Model Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> Controller Class Initialized
+DEBUG - 2013-09-13 08:40:33 --> File loaded: application/views/email/email-one.php
+DEBUG - 2013-09-13 08:40:33 --> File loaded: application/views/email/email-one.php

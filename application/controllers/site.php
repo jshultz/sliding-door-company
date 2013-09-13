@@ -23,11 +23,14 @@
 				parent::__construct();
 			}
 
+			/* This Does Nothing except prove the site can load */
 			public function index()
 			{
 				$this->load->view('welcome_message');
 			}
 
+			/* This is how new contacts get entered into the system. It's looking for
+			these post variables */
 			public function new_contact(){
 
 				$query_string = "";
@@ -53,6 +56,7 @@
 					$lat = $pieces[0];
 					$lng = $pieces[1];
 
+					/* This is is the function in the model that inserts records into the database */
 					$this->Clients_model->create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng, $estimateStyle, $estimateSize, $estimatePanels, $cost);
 
 				}
@@ -60,19 +64,24 @@
 
 
 			}
-
+			/* This is the function that sends the emails. It get's triggered by a cron job and typically
+			runs every 10 minutes. */
 			public function email_contact() {
 
 				$people = $this->Clients_model->email_client();
 
+
 				if ($people == NULL) {
+					/* If the above returns no results (for example the database is empty) we end up here. */
 					echo 'no recipeints';
 				} else {
-
+					/* If there are people in the database then this is where we are. */
 					echo '<pre>';
 					var_dump($people);
 
 					foreach ($people as $key => $row) {
+
+						/* For every person in the table, we'll loop through them here. */
 
 						if (is_array($row)) {
 
@@ -99,11 +108,12 @@
 								$lat = $x['lat'];
 								$lng = $x['lng'];
 
-
+								/* We'll now check the locations table to find the closest store location to them. */
 
 								$location = $this->Location_model->getClosetLocation($lat, $lng, $zip);
 
 
+								/* Now let's see how long it's been since we emailed this person. */
 
 								$date1 = new DateTime("now");
 								$date2 = new DateTime($lastSent);
@@ -113,12 +123,11 @@
 
 								echo $timePassed;
 
-
-
 								echo '<p><em>' . $lastSent . '</em></p>';
 
 								if (($lastSent == '0000-00-00') || ($timePassed > 7) || ($lastSent = NULL))
 								{
+									/* If they are a new recipient, or it's been more then 7 days, we send an email. */
 
 									$config['protocol'] = 'mail';
 									$config['wordwrap'] = FALSE;
@@ -179,7 +188,7 @@
 
 									$this->email->to($cust_email, $fullname);
 
-
+									/* Based on how many times they have been emailed we pick what email to send them. */
 
 									switch ($emailLevel) {
 										case 0:
@@ -308,7 +317,7 @@
 
 				$this->load->view('/landing/thankyou', $data);
 			}
-
+			/* This unsuscribe's people. It needs an email address and a unique key to work. */
 			public function unsubscribe() {
 
 				if (isset($_GET) || isset($_POST)) {
@@ -323,7 +332,7 @@
 				}
 
 			}
-
+			/* This fires from the landing page. */
 			public function consultation() {
 				if (isset($_GET) || isset($_POST)) {
 
