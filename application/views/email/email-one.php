@@ -25,11 +25,11 @@
 				<td style="vertical-align: middle; text-align: center; width: 65px"><a style="text-transform: uppercase; text-decoration: none; margin: 0 auto; color: #939598; font-size: 8px" href="http://www.slidingdoorco.com/help/contact">Contact Us</a></td>
 				<td style="width: 280px"></td>
 				<td style="width: 20px; text-align: center"><a style="margin: 0 auto;" href="https://www.facebook.com/TheSlidingDoorCo"><img
-							border="0" src="<?php echo base_url(); ?>/assets/images/email-one/facebook.png" height="14px;"  alt=""></a></td>
+							border="0" src="<?php echo base_url(); ?>assets/images/email-one/facebook.png" height="14px;"  alt=""></a></td>
 				<td style="width: 20px; text-align: center"><a style="margin: 0 auto;" href="http://twitter.com/#!/slidingdoorco"><img src="<?php echo base_url(); ?>/assets/images/email-one/twitter.png" height="14px"
 				                                                                                                                       alt=""></a></td>
 				<td style="width: 20px; text-align: center"><a style="margin: 0 auto;" href="http://www.youtube.com/slidingdoorcompany/"><img
-						<img src="<?php echo base_url(); ?>/assets/images/email-one/youtube.png" height="14px"  alt=""></a></td>
+						<img src="<?php echo base_url(); ?>assets/images/email-one/youtube.png" height="14px"  alt=""></a></td>
 				<td style="width:20px;"></td>
 			</table>
 		</td>
@@ -37,12 +37,12 @@
 	</tr>
 	<tr>
 		<td colspan="1">
-			<img src="<?php echo base_url(); ?>/assets/images/email-one/DYO_email-v3-1_10.jpg" width="243" height="123" alt="">
+			<img src="<?php echo base_url(); ?>assets/images/email-one/DYO_email-v3-1_10.jpg" width="243" height="123" alt="">
 		</td>
 		<td colspan="1" style="text-align: right; vertical-align: middle;">
 			<?php
 				if ($special == '1') {
-					echo '<img style="margin-right: 40px" src="' . base_url() . '/assets/images/email-one/special.png" alt="">';
+					echo '<img style="margin-right: 40px" src="' . base_url() . 'assets/images/email-one/special.png" alt="">';
 
 				} else {
 
@@ -152,7 +152,7 @@
 						echo $maplink;
 					};?>">
 
-					<img border="0" width="150px" src="<?php echo base_url(); ?>/assets/images/email-one/Google-Maps-Logo.png"></a>
+					<img border="0" width="150px" src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
 
 
 				<p>
@@ -193,7 +193,7 @@
 	</tr>
 	<tr>
 		<td colspan="2" style="text-align: center; vertical-align: middle; height: 100px">
-			<?php echo '<a href="<?php echo base_url(); ?>/site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="http://sliding.osmprojects.com/assets/images/email-one/free-consultation.png"></a>
+			<?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/free-consultation.png"></a>
 		</td>
 	</tr>
 	<tr>
@@ -228,7 +228,7 @@
 					if ((isset($cust_email) && (strlen($cust_email) > 0))) {
 
 						echo '<p><a style="color: #939598; text-decoration: none;" href="http://slidingdoorco.us5.list-manage1.com/subscribe/post?u=8f352881da294a071db8b8ed5&id=2d9fbec01c&MERGE0=' . $cust_email . '&MERGE1=' . $firstname . '&MERGE2=' . $lastname . '">SIGN UP FOR THE LATEST EVENTS AND OFFERS</a>
-				| <a style="color:939598" href="<?php echo base_url(); ?>/site/unsubscribe?email=' . $cust_email . '&key=' . $key . '">Unsubscribe</a>
+				| <a style="color:939598" href="'  . base_url() . 'site/unsubscribe?email=' . $cust_email . '&key=' . $key . '">Unsubscribe</a>
 				</p>';
 					}
 				?>

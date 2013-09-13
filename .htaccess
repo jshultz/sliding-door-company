@@ -1,7 +1,9 @@
 RewriteEngine on
-RewriteBase /
+
 # Hide the application and system directories by redirecting the request to index.php
-RewriteRule ^(application|system|\.svn) index.php/$1 [L]
+RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+RewriteRule ^(.*)$ /design-tool/index.php?/$1 [L]
+
+php_value date.timezone "America/Los_Angeles"

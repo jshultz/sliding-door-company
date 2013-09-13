@@ -1,0 +1,10 @@
+1. I've included a SQL dump file. It will create a database if it doesn't exist called 'sliding_door'. If
+you have already created a database or need to use a different database name, feel free to delete the
+first two lines of the dump file.
+
+2.  Create a cron job that will execute http://<domain name>/site/email_contact 1x per day. 
+
+3. Update /application/config/database.php with your database settings. You will see two already setup in the database
+file. You will see a database config called production. You can freely update the config to match your settings. You
+should only have to update database, username and password. Hostname should only have to be updated if the mysql 
+server is not running locally. In most cases it does.

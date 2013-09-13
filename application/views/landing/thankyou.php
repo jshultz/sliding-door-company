@@ -8,11 +8,11 @@
 	<title>Sliding Door Company: Consultation Request: Thank You</title>
 
 
-	<link rel="stylesheet" href="/assets/css/foundation.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/foundation.css">
 
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 
-	<script src="/assets/js/vendor/custom.modernizr.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/vendor/custom.modernizr.js"></script>
 
 </head>
 <body>
@@ -43,7 +43,7 @@
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-<script src="/assets/js/foundation.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/foundation.min.js"></script>
 
 <script>
 	$(function() {

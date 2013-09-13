@@ -63,7 +63,10 @@ class Site extends CI_Controller {
 
 	public function email_contact() {
 
+
 		$people = $this->Clients_model->email_client();
+
+
 
 		if ($people == NULL) {
 			echo 'no recipeints';
@@ -95,6 +98,7 @@ class Site extends CI_Controller {
 
 						$location = $this->Location_model->getClosetLocation($lat, $lng, $zip);
 
+						date_default_timezone_set( 'America/Los_Angeles' );
 
 						$date1 = new DateTime("now");
 						$date2 = new DateTime($lastSent);
@@ -105,7 +109,7 @@ class Site extends CI_Controller {
 
 
 
-						if (($lastSent == '0000-00-00') || ($timePassed > 7))
+						if (($lastSent == '0000-00-00') || ($lastSent == NULL) || ($timePassed > 7))
 						{
 
 							$config['protocol'] = 'mail';
@@ -140,6 +144,10 @@ class Site extends CI_Controller {
 								} else {
 									$data['nolocation'] = '0';
 
+									echo '<pre>';
+									var_dump($firstName);
+									echo '<pre>';
+									var_dump($location);
 
 									foreach ($location->result_array() as $place) {
 
@@ -210,6 +218,8 @@ class Site extends CI_Controller {
 							$this->Clients_model->updateCount($cust_email);
 
 							$this->Clients_model->updateDate($cust_email);
+
+							echo 'emails sent';
 
 						}
 

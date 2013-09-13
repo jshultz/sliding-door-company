@@ -8,17 +8,17 @@
 	<title>Sliding Door Company: Consultation Request</title>
 
 
-	<link rel="stylesheet" href="/assets/css/foundation.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/foundation.css">
 
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 
-	<script src="/assets/js/vendor/custom.modernizr.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/vendor/custom.modernizr.js"></script>
 
 </head>
 <body>
 
 <div class="row">
-	<div class="large-4 columns"><img src="/assets/images/site/sliding-door-company.png" width="235" height="123" alt=""></div>
+	<div class="large-4 columns"><img src="<?php echo base_url(); ?>assets/images/site/sliding-door-company.png" width="235" height="123" alt=""></div>
 	<div class="large-6 columns">
 		<h3 style="margin-top: 40px">Consultation Request Form</h3>
 	</div>
@@ -28,7 +28,7 @@
 <div class="row">
 
 	<div class="large-6 columns large-offset-3">
-		<form action="/site/email_store">
+		<form action="<?php echo base_url(); ?>site/email_store">
 			<input type="hidden" name="store_email" value="<?php echo $store_email; ?>">
 
 			<input type="hidden" name="location" value="<?php echo $location; ?>">
@@ -202,7 +202,7 @@
 
 				</div>
 				<div class="small-3 columns">
-					<input src="/assets/images/email-one/consultation-button.png" value="Request Consultation" type="image">
+					<input src="<?php echo base_url(); ?>assets/images/email-one/consultation-button.png" value="Request Consultation" type="image">
 				</div>
 			</div>
 		</form>
@@ -217,7 +217,7 @@
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-<script src="/assets/js/foundation.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/foundation.min.js"></script>
 
 <script>
 	$(function() {

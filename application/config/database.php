@@ -48,9 +48,9 @@
 $active_group = 'production';
 $active_record = TRUE;
 
-$db['production']['hostname'] = 'localhost';
-$db['production']['username'] = 'root';
-$db['production']['password'] = '';
+$db['production']['hostname'] = 'localhost:3306';
+$db['production']['username'] = 'dyotool_v2';
+$db['production']['password'] = 'solen';
 $db['production']['database'] = 'sliding_door';
 $db['production']['dbdriver'] = 'mysql';
 $db['production']['dbprefix'] = '';
