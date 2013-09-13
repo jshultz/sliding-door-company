@@ -14,9 +14,9 @@
 					($point1['lat'] - $point2['lat'])
 					* ($point1['lat'] - $point2['lat'])
 					+ cos($point1['lat'] / $deg_per_rad)  // Convert these to
-					  * cos($point2['lat'] / $deg_per_rad)  // radians for cos()
-					  * ($point1['long'] - $point2['long'])
-					  * ($point1['long'] - $point2['long'])
+					* cos($point2['lat'] / $deg_per_rad)  // radians for cos()
+					* ($point1['long'] - $point2['long'])
+					* ($point1['long'] - $point2['long'])
 				) / 180);
 
 			return $distance;  // Returned using the units used for $radius.
@@ -109,6 +109,7 @@
 		function getClosetLocation($lat, $lng, $zip) {
 
 
+
 			$this->db->select('*')
 				->from('zipcodes');
 
@@ -127,8 +128,11 @@
 
 
 					if ($row->nostore == '1') {
+						echo '<p>null</p>';
+
 						return null;
 					} elseif ($row->usezip == '1') {
+						echo '<p>not null</p>';
 
 						$results = array();
 
@@ -180,28 +184,14 @@
 
 					} else {
 
-                        $results = array();
+
 
 						$this->db->select('*')
 							->from('locations')
 							->where('id', $row->storeid);
 						$query = $this->db->get();
 
-                        foreach ($query->result() as $address) {
-
-                            $results['location'] = $address->location;
-                            $results['address'] = $address->address;
-                            $results['Address_2'] = $address->Address_2;
-                            $results['city'] = $address->city;
-                            $results['state'] = $address->state;
-                            $results['zip'] = $address->zip;
-                            $results['telephone'] = $address->telephone;
-                            $results['email'] = $address->email;
-                            $results['map_link'] = $address->map_link;
-
-                        }
-
-						return $results;
+						return $query;
 
 
 					}
@@ -213,7 +203,7 @@
 
 
 
-			}
+		}
 
 		function updateLocation($idlocation, $locationname, $locationstreet, $locationcity, $locationstate, $locationzip, $locationdescription, $lat, $lng, $tags, $uid)
 		{

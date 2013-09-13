@@ -45,7 +45,7 @@
 | the active record class
 */
 
-$active_group = 'production';
+$active_group = 'local';
 $active_record = TRUE;
 
 $db['production']['hostname'] = 'localhost:3306';
@@ -65,7 +65,7 @@ $db['production']['autoinit'] = TRUE;
 $db['production']['stricton'] = FALSE;
 
 $db['local']['hostname'] = 'localhost';
-$db['local']['username'] = 'root';
+$db['local']['username'] = 'axis41';
 $db['local']['password'] = '';
 $db['local']['database'] = 'sliding_door';
 $db['local']['dbdriver'] = 'mysql';

@@ -4,6 +4,6 @@ RewriteEngine on
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /design-tool/index.php?/$1 [L]
+RewriteRule ^(.*)$ index.php?/$1 [L]
 
 php_value date.timezone "America/Los_Angeles"
