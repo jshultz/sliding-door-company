@@ -128,12 +128,8 @@
 
 
 					if ($row->nostore == '1') {
-						echo '<p>null</p>';
-
 						return null;
 					} elseif ($row->usezip == '1') {
-						echo '<p>not null</p>';
-
 						$results = array();
 
 
