@@ -145,10 +145,7 @@ class Site extends CI_Controller {
 							} else {
 								$data['nolocation'] = '0';
 
-								if( is_object( $location ) )
-									$foreachLoop = $location->result_array();
-								else
-									$foreachLoop = $location;
+								$foreachLoop = ( is_object( $location) ) ? $location->result_array() : $location;
 
 								foreach ($foreachLoop as $place) {
 
@@ -206,7 +203,6 @@ class Site extends CI_Controller {
 							$email = $this->load->view('email/email-one', $data, TRUE);
 
 							$this->email->message($email);
-
 
 							$this->email->send();
 
@@ -317,7 +313,6 @@ class Site extends CI_Controller {
 
 			foreach ($customer->result_array() as $x) {
 
-
 				$firstName = $x['FirstName'];
 				$lastName = $x['LastName'];
 				$address = $x['Address'];
@@ -361,9 +356,7 @@ class Site extends CI_Controller {
 			} else {
 				$data['nolocation'] = '0';
 
-
 				foreach ($location->result_array() as $place) {
-
 
 					$data['maplink'] = $place['map_link'];
 					$data['location'] = $place['location'];
@@ -377,11 +370,9 @@ class Site extends CI_Controller {
 
 			}
 
-
 			$this->load->view('landing/landing-view', $data);
 
 		}
-
 
 	}
 }
