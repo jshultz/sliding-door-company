@@ -66,6 +66,8 @@ class Site extends CI_Controller {
 	runs every 10 minutes. */
 	public function email_contact() {
 
+        date_default_timezone_set('America/Los_Angeles');
+
 		$people = $this->Clients_model->email_client();
 
 		if ($people == NULL) {
@@ -106,6 +108,7 @@ class Site extends CI_Controller {
 						$location = $this->Location_model->getClosetLocation($lat, $lng, $zip);
 
 						/* Now let's see how long it's been since we emailed this person. */
+
 
 						$date1 = new DateTime("now");
 						$date2 = new DateTime($lastSent);
@@ -228,6 +231,8 @@ class Site extends CI_Controller {
 	}
 
 	public function email_store() {
+
+        date_default_timezone_set('America/Los_Angeles');
 
 		if (isset($_GET) || isset($_POST)) {
 
