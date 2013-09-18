@@ -45,7 +45,7 @@
 | the active record class
 */
 
-$active_group = 'production';
+$active_group = 'local';
 $active_record = TRUE;
 
 $db['production']['hostname'] = 'localhost:3306';

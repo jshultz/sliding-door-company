@@ -105,7 +105,7 @@ class Site extends CI_Controller
 						$emailLevel = $x['EmailLevel'];
 						$lastSent = $x['lastSent'];
 						$estimateStyle = str_replace('+', " ", $x['estimateStyle']);
-						$estimateSize = str_replace('\"', '"', $x['estimateSize']);
+						$estimateSize = str_replace('\\"', '"', $x['estimateSize']);
 						$estimatePanels = $x['estimatePanels'];
 						$price = $x['cost'];
 
@@ -154,6 +154,8 @@ class Site extends CI_Controller
 								$data['nolocation'] = '0';
 
 								$foreachLoop = (is_object($location)) ? $location->result_array() : $location;
+
+								$data['location_array'] = $location;
 
 								foreach ($foreachLoop as $place) {
 
@@ -347,8 +349,8 @@ class Site extends CI_Controller
 				$source = $x['Source'];
 				$emailLevel = $x['EmailLevel'];
 				$lastSent = $x['lastSent'];
-				$estimateStyle = $x['estimateStyle'];
-				$estimateSize = $x['estimateSize'];
+				$estimateStyle = str_replace('+', " ", $x['estimateStyle']);
+				$estimateSize = str_replace('\\"', "'", $x['estimateSize']);
 				$estimatePanels = $x['estimatePanels'];
 				$price = $x['cost'];
 
@@ -385,7 +387,11 @@ class Site extends CI_Controller
 			} else {
 				$data['nolocation'] = '0';
 
-				foreach ($location->result_array() as $place) {
+				$foreachLoop = (is_object($location)) ? $location->result_array() : $location;
+
+				$data['location_array'] = $location;
+
+				foreach ($foreachLoop as $place) {
 
 					$data['maplink'] = $place['map_link'];
 					$data['location'] = $place['location'];

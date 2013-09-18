@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -155,68 +154,147 @@
 			</div>
 		</td>
 		<td colspan="1" style="vertical-align: top;">
-			<div style="width:240px; padding: 0 20px;">
+			<div style="width:240px; padding: 1px 20px;">
 
 				<?php if ($nolocation != '1') { ?>
 
-				<h3>Your Showroom</h3>
 
-				<p>
-					Our <a style="color: #BFD730; text-decoration: none;" href="<?php
-						if ((isset($maplink) && (strlen($maplink) > 0))) {
 
-							echo $maplink;
-						}
-					?>"><?php
-							if ((isset($location) && (strlen($location) > 0))) {
+					<?php if (count($location_array) > 1) {
 
-								echo $location;
+						echo '<h3>Your Closest Showrooms</h3>';
+
+						foreach ($location_array as $store) {?>
+
+							<?php
+							if ((isset($store['email']) && (strlen($store['email']) > 0))) {
+
+								$email_address = $store['email'];
 							}
-						?></a> showroom is
-					serving your area.
+							?>
 
-				</p>
-				<a href="<?php
-					if ((isset($maplink) && (strlen($maplink) > 0))) {
+							<p>
+								Our <a style="color: #BFD730; text-decoration: none;" href="<?php
+									if ((isset($store['map_link']) && (strlen($store['map_link']) > 0))) {
 
-						echo $maplink;
-					};?>">
+										echo $store['map_link'];
+									}
+								?>"><?php
+										if ((isset($store['location']) && (strlen($store['location']) > 0))) {
 
-					<img border="0" width="150px" src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
+											echo $store['location'];
+										}
+									?></a> showroom is
+								serving your area.
+
+							</p>
+							<a href="<?php
+								if ((isset($store['map_link']) && (strlen($store['map_link']) > 0))) {
+
+									echo $store['map_link'];
+								};?>">
+
+								<img border="0" width="150px" src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
 
 
-				<p>
-					<?php
-						if ((isset($address) && (strlen($address) > 0))) {
+							<p>
+								<?php
+									if ((isset($store['address']) && (strlen($store['address']) > 0))) {
 
-							echo $address;
-						}
-					?><br/>
-					<?php
-						if ((isset($city) && (strlen($city) > 0))) {
+										echo $store['address'];
+									}
+								?><br/>
+								<?php
+									if ((isset($store['city']) && (strlen($store['city']) > 0))) {
 
-							echo $city;
-						}
-					?>
-					, <?php
-						if ((isset($state) && (strlen($state) > 0))) {
+										echo $store['city'];
+									}
+								?>
+								, <?php
+									if ((isset($store['state']) && (strlen($store['state']) > 0))) {
 
-							echo $state;
-						}
-					?> <?php
-						if ((isset($zip) && (strlen($zip) > 0))) {
+										echo $store['state'];
+									}
+								?> <?php
+									if ((isset($store['zip']) && (strlen($store['zip']) > 0))) {
 
-							echo $zip;
-						}
-					?><br/>
-					t: <?php
-						if ((isset($telephone) && (strlen($telephone) > 0))) {
+										echo $store['zip'];
+									}
+								?><br/>
+								t: <?php
+									if ((isset($store['telephone']) && (strlen($store['telephone']) > 0))) {
 
-							echo $telephone;
-						}
-					?><br/>
-					M-F: 9am-6pm
-				</p> <?php } ?>
+										echo $store['telephone'];
+									}
+								?><br/>
+								M-F: 9am-6pm
+							</p>
+
+						<?php }
+
+					} else { ?>
+						<h3>Your Showroom</h3>
+						<p>
+							Our <a style="color: #BFD730; text-decoration: none;" href="<?php
+								if ((isset($maplink) && (strlen($maplink) > 0))) {
+
+									echo $maplink;
+								}
+							?>"><?php
+									if ((isset($location) && (strlen($location) > 0))) {
+
+										echo $location;
+									}
+								?></a> showroom is
+							serving your area.
+
+						</p>
+						<a href="<?php
+							if ((isset($maplink) && (strlen($maplink) > 0))) {
+
+								echo $maplink;
+							};?>">
+
+							<img border="0" width="150px" src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
+
+
+						<p>
+							<?php
+								if ((isset($address) && (strlen($address) > 0))) {
+
+									echo $address;
+								}
+							?><br/>
+							<?php
+								if ((isset($city) && (strlen($city) > 0))) {
+
+									echo $city;
+								}
+							?>
+							, <?php
+								if ((isset($state) && (strlen($state) > 0))) {
+
+									echo $state;
+								}
+							?> <?php
+								if ((isset($zip) && (strlen($zip) > 0))) {
+
+									echo $zip;
+								}
+							?><br/>
+							t: <?php
+								if ((isset($telephone) && (strlen($telephone) > 0))) {
+
+									echo $telephone;
+								}
+							?><br/>
+							M-F: 9am-6pm
+						</p>
+
+					<?php }?>
+
+
+				 <?php } ?>
 
 			</div>
 		</td>

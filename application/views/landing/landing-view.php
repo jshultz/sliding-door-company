@@ -32,10 +32,6 @@
 
 <div class="large-6 columns large-offset-3">
 <form action="<?php echo base_url(); ?>site/email_store">
-<input type="hidden" name="store_email" value="<?php echo $store_email; ?>">
-
-<input type="hidden" name="location" value="<?php echo $location; ?>">
-
 <input type="hidden" name="nolocation" value="<?php echo $nolocation; ?>">
 
 <div class="row">
@@ -144,8 +140,8 @@
 						<label for="style" class="right inline">Style:</label>
 					</div>
 					<div class="small-9 columns">
-						<input type="text" name="style" id="style" placeholder="<?php echo $style; ?>"
-						       value="<?php echo $style; ?>" disabled>
+						<input type="text" name="style" id="style" placeholder='<?php echo $style; ?>'
+						       value='<?php echo $style; ?>' disabled>
 					</div>
 				</div>
 				<div class="row">
@@ -177,47 +173,47 @@
 				</div>
 
 				<?php
-				if ($special == '1') {
+					if ($special == '1') {
 
-					$dollar = $price;
-					$dollar = str_replace("$", "", $dollar);
-					$dollar = str_replace(",", "", $dollar);
-					$dollar = str_replace(".", "", $dollar);
+						$dollar = $price;
+						$dollar = str_replace("$", "", $dollar);
+						$dollar = str_replace(",", "", $dollar);
+						$dollar = str_replace(".", "", $dollar);
 
-					if ($dollar <= 1000) {
-						$discount_price = $dollar - ($dollar * .10);
+						if ($dollar <= 1000) {
+							$discount_price = $dollar - ($dollar * .10);
 
-					}
+						}
 
-					if (($dollar > 1000) && ($dollar <= 2000)) {
-						$discount_price = $dollar - ($dollar * .15);
+						if (($dollar > 1000) && ($dollar <= 2000)) {
+							$discount_price = $dollar - ($dollar * .15);
 
-					}
+						}
 
-					if ($dollar > 2000) {
-						$discount_price = $dollar - ($dollar * .20);
+						if ($dollar > 2000) {
+							$discount_price = $dollar - ($dollar * .20);
 
-					} ?>
+						} ?>
 
-					<div class="row">
-						<div class="small-3 columns">
-							<label for="price" class="right inline">Discount Price<sup>*</sup>:</label>
+						<div class="row">
+							<div class="small-3 columns">
+								<label for="price" class="right inline">Discount Price<sup>*</sup>:</label>
+							</div>
+							<div class="small-9 columns">
+								<?php
+									setlocale(LC_MONETARY, 'en_US.UTF-8');
+									$discount_price = money_format('%.2n', $discount_price);
+								?>
+								<input type="text" name="discountprice" id="discount_price"
+								       placeholder="<?php echo $discount_price; ?>"
+								       value="<?php
+									       echo $discount_price;
+								       ?>" disabled>
+							</div>
 						</div>
-						<div class="small-9 columns">
-							<?php
-								setlocale(LC_MONETARY, 'en_US.UTF-8');
-								$discount_price = money_format('%.2n', $discount_price);
-							?>
-							<input type="text" name="discountprice" id="discount_price"
-							       placeholder="<?php echo $discount_price; ?>"
-							       value="<?php
-							       echo $discount_price;
-							       ?>" disabled>
-						</div>
-					</div>
 
-				<?php
-				}
+					<?php
+					}
 
 
 				?>
@@ -241,10 +237,148 @@
 			<div class="small-12 columns">
 				<?php if ($nolocation == '0') { ?>
 
-					<p><strong><?php echo $location; ?></strong><br/>
-						<?php echo $address; ?><br/>
-						<?php echo $city; ?>, <?php echo $state; ?> <?php echo $zip; ?><br/>
-						<?php echo $telephone; ?></p>
+					<?php if (count($location_array) > 1) {
+
+						echo '<h3>Your Closest Showrooms</h3>';
+						echo '<p>Please choose the store most convenient for you.';
+						foreach ($location_array as $store) {
+							?>
+
+							<?php
+							if ((isset($store['email']) && (strlen($store['email']) > 0))) {
+
+								$email_address = $store['email'];
+							}
+							?>
+
+							<p><input type="radio" name="store_email" value="<?php echo $email_address; ?>">
+								<a style="color: #BFD730; text-decoration: none;" href="<?php
+									if ((isset($store['map_link']) && (strlen($store['map_link']) > 0))) {
+
+										echo $store['map_link'];
+									}
+								?>"><?php
+										if ((isset($store['location']) && (strlen($store['location']) > 0))) {
+
+											echo $store['location'];
+										}
+									?></a>
+
+							</p>
+							<a href="<?php
+								if ((isset($store['map_link']) && (strlen($store['map_link']) > 0))) {
+
+									echo $store['map_link'];
+								};?>">
+
+								<img border="0" width="150px"
+								     src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
+
+
+							<p>
+								<?php
+									if ((isset($store['address']) && (strlen($store['address']) > 0))) {
+
+										echo $store['address'];
+									}
+								?><br/>
+								<?php
+									if ((isset($store['city']) && (strlen($store['city']) > 0))) {
+
+										echo $store['city'];
+									}
+								?>
+								, <?php
+									if ((isset($store['state']) && (strlen($store['state']) > 0))) {
+
+										echo $store['state'];
+									}
+								?> <?php
+									if ((isset($store['zip']) && (strlen($store['zip']) > 0))) {
+
+										echo $store['zip'];
+									}
+								?><br/>
+								t: <?php
+									if ((isset($store['telephone']) && (strlen($store['telephone']) > 0))) {
+
+										echo $store['telephone'];
+									}
+								?><br/>
+								M-F: 9am-6pm
+							</p>
+
+						<?php
+						}
+
+					} else {
+						?>
+						<h3>Your Showroom</h3>
+						<input type="hidden" name="store_email" value="<?php echo $store_email; ?>">
+
+						<input type="hidden" name="location" value="<?php echo $location; ?>">
+
+
+						<p>
+							Our <a style="color: #BFD730; text-decoration: none;" href="<?php
+								if ((isset($maplink) && (strlen($maplink) > 0))) {
+
+									echo $maplink;
+								}
+							?>"><?php
+									if ((isset($location) && (strlen($location) > 0))) {
+
+										echo $location;
+									}
+								?></a> showroom is
+							serving your area.
+
+						</p>
+						<a href="<?php
+							if ((isset($maplink) && (strlen($maplink) > 0))) {
+
+								echo $maplink;
+							};?>">
+
+							<img border="0" width="150px"
+							     src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
+
+
+						<p>
+							<?php
+								if ((isset($address) && (strlen($address) > 0))) {
+
+									echo $address;
+								}
+							?><br/>
+							<?php
+								if ((isset($city) && (strlen($city) > 0))) {
+
+									echo $city;
+								}
+							?>
+							, <?php
+								if ((isset($state) && (strlen($state) > 0))) {
+
+									echo $state;
+								}
+							?> <?php
+								if ((isset($zip) && (strlen($zip) > 0))) {
+
+									echo $zip;
+								}
+							?><br/>
+							t: <?php
+								if ((isset($telephone) && (strlen($telephone) > 0))) {
+
+									echo $telephone;
+								}
+							?><br/>
+							M-F: 9am-6pm
+						</p>
+
+					<?php } ?>
+
 				<?php } else { ?>
 
 					<p>Your qualify for a telephone
