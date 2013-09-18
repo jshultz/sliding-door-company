@@ -199,6 +199,37 @@ class Clients_model extends CI_Model {
 		}
 	}
 
+    function updatePrice($email) {
+        $this->db->select('*')
+            ->from('clients')
+            ->where('Email', $email);
+
+        $query = $this->db->get();
+
+        $row = $query->row_array();
+        $num = $query->num_rows();
+
+        if ($num < 1)
+        {
+            echo 'Something went wrong';
+
+        } else {
+            foreach ($query->result() as $row)
+            {
+
+                $level = $row->EmailLevel + 1;
+
+                $data = array(
+                    'EmailLevel' => $level
+                );
+
+                $this->db->where('Email', $email);
+                $this->db->update('clients', $data);
+
+            }
+        }
+    }
+
 	function unsubscribeEmail($email, $Key) {
 		$this->db->select('*')
 			->from('clients')
