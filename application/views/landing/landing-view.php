@@ -241,7 +241,7 @@
 
 						echo '<h3>Your Closest Showrooms</h3>';
 						echo '<p>Please choose the store most convenient for you.';
-						foreach ($location_array as $store) {
+						foreach (array_slice($location_array, 0, 5) as $store) {
 							?>
 
 							<?php

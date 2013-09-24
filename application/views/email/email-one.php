@@ -164,7 +164,7 @@
 
 						echo '<h3>Your Closest Showrooms</h3>';
 
-						foreach ($location_array as $store) {?>
+						foreach (array_slice($location_array, 0, 5) as $store) {?>
 
 							<?php
 							if ((isset($store['email']) && (strlen($store['email']) > 0))) {
