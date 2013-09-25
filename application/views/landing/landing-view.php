@@ -132,7 +132,7 @@
 			<div class="small-10 columns">
 				<div class="row">
 					<div class="small-12 columns">
-						<p style="text-decoration: underline"><strong>Your Design</strong></p>
+						<p style="text-decoration: underline"><strong>Your Quote</strong></p>
 					</div>
 				</div>
 				<div class="row">
@@ -305,7 +305,12 @@
 										echo $store['telephone'];
 									}
 								?><br/>
-								M-F: 9am-6pm
+                                Hours: <?php
+                                if ((isset($store['hours']) && (strlen($store['hours']) > 0))) {
+
+                                    echo $store['hours'];
+                                }
+                                ?><br/>
 							</p>
 
 						<?php
@@ -374,7 +379,12 @@
 									echo $telephone;
 								}
 							?><br/>
-							M-F: 9am-6pm
+                            Hours: <?php
+                            if ((isset($hours) && (strlen($hours) > 0))) {
+
+                                echo $hours;
+                            }
+                            ?><br/>
 						</p>
 
 					<?php } ?>

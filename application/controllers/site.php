@@ -73,8 +73,6 @@ class Site extends CI_Controller
 	public function email_contact()
 	{
 
-
-
 		date_default_timezone_set('America/Los_Angeles');
 
 		$people = $this->Clients_model->email_client();
@@ -167,6 +165,7 @@ class Site extends CI_Controller
 									$data['zip'] = $place['zip'];
 									$data['telephone'] = $place['telephone'];
 									$data['email'] = $place['email'];
+                                    $data['hours'] = $place['hours'];
 								}
 
 							}
@@ -176,18 +175,19 @@ class Site extends CI_Controller
 
 							switch ($emailLevel) {
 								case 0:
-									$subject = 'Thank You For Signing Up';
+									$subject = 'Your quote from The Sliding Door Company';
 									$data['special'] = '0';
-									$data['message'] = "<p>Thank you for designing your beautiful new closet doors with us. Your next step is sharing the specs of your custom order with the showroom below for more detailed pricing and options.</p>";
+									$data['message'] = "<p>Thank you for designing your beautiful new closet doors with us. </p><p>Below is the base quote for your design. Your next step is sharing the specs of your custom order with your local showroom below for more detailed pricing and options.</p>";
 
 									break;
 								case 1:
-									$subject = 'Thank You From The Sliding Door Company';
+									$subject = 'Your quote from The Sliding Door Company';
 									$data['special'] = '0';
 									if ($location == null) {
 										$data['message'] = '<p>Thank you for designing your beautiful new closet doors with us. Your next step is sharing the specs of your custom order with the showroom below for more detailed pricing and options.</p>';
 									} else {
-										$data['message'] = "<p>You're invited to our " . $place['city'] . "showroom for a free personalized
+                                        $place = array_shift(array_values($location));
+										$data['message'] = "<p>You're invited to our " . $place['city'] . " showroom for a free personalized
 											consultation! You'll get one-on-one assistance from our trained experts and a
 											first-hand look at your material options.</p>";
 									}
@@ -199,6 +199,7 @@ class Site extends CI_Controller
 									if ($location == null) {
 										$data['message'] = "<p>Schedule a consultation with our showroom headquarters before " . date('Y-m-d', strtotime("+30 days")) . " to take advantage of this one-time offer!</p>";
 									} else {
+                                        $place = array_shift(array_values($location));
 										$data['message'] = "<p>You’re invited to our " . $place['city'] . " showroom for a free personalized
 											consultation! You’ll get one-on-one assistance from our trained experts and a
 											first-hand look at your material options.</p>";
@@ -215,7 +216,7 @@ class Site extends CI_Controller
 
 							$this->phpmailer->From = 'contact@slidingdoorco.com';
 
-							$this->phpmailer->FromName = 'Sliding Door Company';
+							$this->phpmailer->FromName = 'The Sliding Door Company';
 
 							$this->phpmailer->IsHTML(true);
 
@@ -401,6 +402,7 @@ class Site extends CI_Controller
 					$data['zip'] = $place['zip'];
 					$data['telephone'] = $place['telephone'];
 					$data['store_email'] = $place['email'];
+                    $data['hours'] = $place['hours'];
 				}
 
 			}

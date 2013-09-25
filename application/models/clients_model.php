@@ -59,7 +59,8 @@ class Clients_model extends CI_Model {
 
 		$this->db->select('*')
 			->from('locations')
-			->where('lat', NULL);
+			->where('lat', NULL)
+            ->or_where('lat', '');
 
 			$query = $this->db->get();
 

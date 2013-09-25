@@ -108,8 +108,6 @@
 
 		function getClosetLocation($lat, $lng, $zip) {
 
-
-
 			$this->db->select('*')
 				->from('zipcodes');
 
@@ -124,8 +122,6 @@
 				$high = $row->high;
 
 				if (($zip <= $high) && ($zip >= $low)) {
-
-
 
 					if ($row->nostore == '1') {
 						return null;

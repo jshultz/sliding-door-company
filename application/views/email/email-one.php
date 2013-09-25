@@ -75,7 +75,7 @@
 		<td colspan="1" style="vertical-align: top;">
 			<div style="width:240px; padding: 0 20px; float: left">
 
-				<h3 style="text-decoration: underline">Your Design</h3>
+				<h3 style="text-decoration: underline">Your Quote</h3>
 
 				<p>
 					<strong>Style: </strong> <?php
@@ -144,9 +144,7 @@
 
 					} else {
 						echo '<p>
-									Send these specs to your
-									showroom for more pricing
-									options.
+									Share these specs with your showroom for more pricing options, or schedule an in-store consultation.
 								</p>';
 					}
 				?>
@@ -156,13 +154,17 @@
 		<td colspan="1" style="vertical-align: top;">
 			<div style="width:240px; padding: 1px 20px;">
 
+                <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/free-consultation.png"></a>
+
 				<?php if ($nolocation != '1') { ?>
 
 
 
 					<?php if (count($location_array) > 1) {
 
-						echo '<h3>Your Closest Showrooms</h3>';
+
+
+						echo '<h3>Contact Your Showroom</h3>';
 
 						foreach (array_slice($location_array, 0, 5) as $store) {?>
 
@@ -227,7 +229,12 @@
 										echo $store['telephone'];
 									}
 								?><br/>
-								M-F: 9am-6pm
+                                Hours: <?php
+                                if ((isset($store['hours']) && (strlen($store['hours']) > 0))) {
+
+                                    echo $store['hours'];
+                                }
+                                ?><br/>
 							</p>
 
 						<?php }
@@ -288,7 +295,12 @@
 									echo $telephone;
 								}
 							?><br/>
-							M-F: 9am-6pm
+                            Hours: <?php
+                            if ((isset($hours) && (strlen($hours) > 0))) {
+
+                                echo $hours;
+                            }
+                            ?><br/>
 						</p>
 
 					<?php }?>
@@ -301,7 +313,7 @@
 	</tr>
 	<tr>
 		<td colspan="2" style="text-align: center; vertical-align: middle; height: 100px">
-			<?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/free-consultation.png"></a>
+
 		</td>
 	</tr>
 	<tr>
