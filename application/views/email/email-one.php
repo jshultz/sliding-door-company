@@ -39,14 +39,7 @@
 			<img src="<?php echo base_url(); ?>assets/images/email-one/DYO_email-v3-1_10.jpg" width="243" height="123" alt="">
 		</td>
 		<td colspan="1" style="text-align: right; vertical-align: middle;">
-			<?php
-				if ($special == '1') {
-					echo '<img style="margin-right: 40px" src="' . base_url() . 'assets/images/email-one/special.png" alt="">';
 
-				} else {
-
-				}
-			?>
 
 		</td>
 	</tr>
@@ -103,50 +96,17 @@
 						}
 					?><br/>
 
-                    <?php
-                        if ($special == '1') {
 
-                            $dollar = $price;
-                            $dollar = str_replace("$","",$dollar);
-                            $dollar = str_replace(",","",$dollar);
-                            $dollar = str_replace(".","",$dollar);
-
-                            if ($dollar <= 1000 ) {
-                                $discount_price = $dollar - ($dollar * .10);
-
-                            }
-
-                            if (($dollar > 1000) && ($dollar <= 2000)) {
-                                $discount_price = $dollar - ($dollar * .15);
-                            }
-
-                            if ($dollar > 2000) {
-                                $discount_price = $dollar - ($dollar * .20);
-                            }
-
-	                        setlocale(LC_MONETARY, 'en_US.UTF-8');
-	                        $discount_price = money_format('%.2n', $discount_price);
-
-	                        echo '<strong>Discount Price*: </strong> ' . $discount_price  . '<br/>';
-                        }
-
-
-                    ?>
 				</p>
 				<?php
-					if ($special == '1') {
-						echo '<p>
+
+					echo '<p>
 									Get started by sharing your
-									custom specs and discount with
+									custom specs with
 									your local showroom for detailed
 									pricing and options.
 								</p>';
 
-					} else {
-						echo '<p>
-									Share these specs with your showroom for more pricing options, or schedule an in-store consultation.
-								</p>';
-					}
 				?>
 
 			</div>
@@ -330,14 +290,7 @@
 					?>
 
 				</p>
-				<?php if ($special == '1') {
-					echo "<p style='font-size: 8px; line-height: 8px;'>
-					*Save 10% when you spend up to $1000. Save 15% when you spend over $1000. Save 20% when you spend over $2000. Discount applies to products offered
-					by The Sliding Door Company and may not be applied to installation or sales tax. Discount can not be combined with other offers or can not be applied to past
-					purchases. Discount valid for email recipient only, and expires on";
-					echo date('Y-m-d', strtotime("+30 days"));
-					echo ". </p>";
-				} ?>
+
 			</div>
 		</td>
 	</tr>

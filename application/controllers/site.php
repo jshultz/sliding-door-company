@@ -181,7 +181,7 @@ class Site extends CI_Controller
 
 									break;
 								case 1:
-									$subject = 'Your quote from The Sliding Door Company';
+									$subject = 'Free one-on-one consultation with an expert!';
 									$data['special'] = '0';
 									if ($location == null) {
 										$data['message'] = '<p>Thank you for designing your beautiful new closet doors with us. Your next step is sharing the specs of your custom order with the showroom below for more detailed pricing and options.</p>';
@@ -194,15 +194,13 @@ class Site extends CI_Controller
 
 									break;
 								case 2:
-									$subject = 'Here is something special from The Sliding Door Company!';
+									$subject = 'Last chance to get your quoted doors at this price!';
 									$data['special'] = '1';
 									if ($location == null) {
-										$data['message'] = "<p>Schedule a consultation with our showroom headquarters before " . date('Y-m-d', strtotime("+30 days")) . " to take advantage of this one-time offer!</p>";
+										$data['message'] = "<p>We think you and your sliding doors were meant to be, so we're saving your doors at this price for 3 more days. After that, your quoted price will expire. Schedule a free consultation before time runs out!</p>";
 									} else {
                                         $place = array_shift(array_values($location));
-										$data['message'] = "<p>You’re invited to our " . $place['city'] . " showroom for a free personalized
-											consultation! You’ll get one-on-one assistance from our trained experts and a
-											first-hand look at your material options.</p>";
+										$data['message'] = "<p>Paragraph should read: We think you and your sliding doors were meant to be, so we're saving your doors at this price for 3 more days. After that, your quoted price will expire. Schedule a free consultation before time runs out!</p>";
 									}
 
 									break;
@@ -229,6 +227,10 @@ class Site extends CI_Controller
 							$this->Clients_model->updateCount($cust_email);
 
 							$this->Clients_model->updateDate($cust_email);
+
+							$this->phpmailer->ClearAddresses();
+
+							$this->phpmailer->ClearAllRecipients();
 
 						}
 
