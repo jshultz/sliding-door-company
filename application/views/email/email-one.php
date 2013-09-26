@@ -108,13 +108,14 @@
 								</p>';
 
 				?>
+                <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/free-consultation.png"></a>
 
 			</div>
 		</td>
 		<td colspan="1" style="vertical-align: top;">
 			<div style="width:240px; padding: 1px 20px;">
 
-                <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/free-consultation.png"></a>
+
 
 				<?php if ($nolocation != '1') { ?>
 
@@ -150,13 +151,7 @@
 								serving your area.
 
 							</p>
-							<a href="<?php
-								if ((isset($store['map_link']) && (strlen($store['map_link']) > 0))) {
-
-									echo $store['map_link'];
-								};?>">
-
-								<img border="0" width="150px" src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
+							
 
 
 							<p>
@@ -216,13 +211,7 @@
 							serving your area.
 
 						</p>
-						<a href="<?php
-							if ((isset($maplink) && (strlen($maplink) > 0))) {
-
-								echo $maplink;
-							};?>">
-
-							<img border="0" width="150px" src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
+						
 
 
 						<p>
