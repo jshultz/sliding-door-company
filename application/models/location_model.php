@@ -197,6 +197,25 @@
 
 		}
 
+		function getStore($store_id) {
+			$this->db->select('*')
+				->from('locations')
+				->where('id', $store_id);
+
+			$query = $this->db->get();
+
+			$num = $query->num_rows();
+
+			if ( $num < 1 ) {
+				return NULL;
+			}
+			else {
+				$row = $query->row_array();
+
+				return $row['location'];
+			}
+		}
+
 		function updateLocation($idlocation, $locationname, $locationstreet, $locationcity, $locationstate, $locationzip, $locationdescription, $lat, $lng, $tags, $uid)
 		{
 			if ($idlocation  == '') {

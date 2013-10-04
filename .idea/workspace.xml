@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21999687-6242-498b-a87a-33a30f1b14e5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/landing/landing-view.php" afterPath="$PROJECT_DIR$/application/views/landing/landing-view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/location_model.php" afterPath="$PROJECT_DIR$/application/models/location_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/site.php" afterPath="$PROJECT_DIR$/application/controllers/site.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sliding-door-company.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,23 +27,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="site.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="site.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/site.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="269" column="9" selection-start="8987" selection-end="8987" vertical-scroll-proportion="0.34334764" vertical-offset="3795" max-vertical-offset="6810">
+            <state line="258" column="0" selection-start="8307" selection-end="8307" vertical-scroll-proportion="-8.75" vertical-offset="1065" max-vertical-offset="2490">
+              <folding>
+                <element signature="e#2268#8030#0" expanded="false" />
+                <element signature="e#10702#10979#0" expanded="false" />
+                <element signature="e#11023#13265#0" expanded="false" />
+                <element signature="e#11059#13261#0" expanded="false" />
+                <element signature="e#13268#13789#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="landing-view.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/landing/landing-view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="245" column="0" selection-start="6738" selection-end="6738" vertical-scroll-proportion="-1.7557603" vertical-offset="4437" max-vertical-offset="6810">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="landing-view.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/landing/landing-view.php">
+      <file leaf-file-name="location_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/location_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="31" selection-start="5537" selection-end="5537" vertical-scroll-proportion="-9.3" vertical-offset="2205" max-vertical-offset="6810">
+            <state line="214" column="40" selection-start="4563" selection-end="4563" vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="720">
               <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#7;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#9;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#p#2;n#div#0;n#div#0;n#div#0;n#div#9;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#__construct#0;n#Location_model#0;n#!!top" expanded="false" />
+                <element signature="n#calc_distance#0;n#Location_model#0;n#!!top" expanded="false" />
+                <element signature="e#367#671#0" expanded="false" />
+                <element signature="n#distance_slc#0;n#Location_model#0;n#!!top" expanded="false" />
+                <element signature="n#getAjaxClosestLocations#0;n#Location_model#0;n#!!top" expanded="false" />
+                <element signature="e#1441#1472#0" expanded="false" />
+                <element signature="e#1572#1861#0" expanded="false" />
+                <element signature="e#1796#1856#0" expanded="false" />
+                <element signature="n#getAjaxLocationList#0;n#Location_model#0;n#!!top" expanded="false" />
+                <element signature="n#getAjaxLocation#0;n#Location_model#0;n#!!top" expanded="false" />
+                <element signature="e#2312#2362#0" expanded="false" />
+                <element signature="e#2312#2402#0" expanded="false" />
+                <element signature="e#2501#2604#0" expanded="false" />
+                <element signature="e#2544#2604#0" expanded="false" />
+                <element signature="n#getClosetLocation#0;n#Location_model#0;n#!!top" expanded="false" />
+                <element signature="e#2664#2709#0" expanded="false" />
+                <element signature="e#2782#4263#0" expanded="false" />
+                <element signature="e#3125#4051#0" expanded="false" />
+                <element signature="e#3557#4043#0" expanded="false" />
+                <element signature="e#4100#4149#0" expanded="false" />
+                <element signature="e#4100#4185#0" expanded="false" />
+                <element signature="n#updateLocation#0;n#Location_model#0;n#!!top" expanded="false" />
+                <element signature="e#4744#5690#0" expanded="false" />
+                <element signature="e#4782#5222#0" expanded="false" />
+                <element signature="e#5229#5690#0" expanded="false" />
+                <element signature="e#5248#5684#0" expanded="false" />
+                <element signature="e#5695#5741#0" expanded="false" />
+                <element signature="e#5695#5769#0" expanded="false" />
+                <element signature="e#5695#5808#0" expanded="false" />
+                <element signature="e#5907#6078#0" expanded="false" />
+                <element signature="e#5975#6078#0" expanded="false" />
+                <element signature="n#deleteLocation#0;n#Location_model#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -91,19 +134,19 @@
       <list>
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
-        <option value="$PROJECT_DIR$/application/models/location_model.php" />
         <option value="$PROJECT_DIR$/application/models/clients_model.php" />
         <option value="$PROJECT_DIR$/application/views/email/email-one.php" />
         <option value="$PROJECT_DIR$/application/config/config.php" />
-        <option value="$PROJECT_DIR$/application/views/landing/landing-view.php" />
         <option value="$PROJECT_DIR$/application/controllers/site.php" />
+        <option value="$PROJECT_DIR$/application/models/location_model.php" />
+        <option value="$PROJECT_DIR$/application/views/landing/landing-view.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="851" />
-    <option name="y" value="186" />
+    <option name="x" value="1110" />
+    <option name="y" value="201" />
     <option name="width" value="1352" />
     <option name="height" value="859" />
   </component>
@@ -269,7 +312,23 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="124" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="126" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="126" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="135" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="925" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="924" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="131" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="127" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="PublishConfig">
@@ -330,20 +389,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="851" y="186" width="1352" height="859" extended-state="0" />
-    <editor active="true" />
+    <frame x="1110" y="201" width="1352" height="859" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1693787" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1693787" sideWeight="0.6701571" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -375,7 +434,13 @@
     <entry file="file://$PROJECT_DIR$/application/controllers/site.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="404" column="0" selection-start="12550" selection-end="12550" vertical-scroll-proportion="0.0" vertical-offset="3120" max-vertical-offset="3120">
-          <folding />
+          <folding>
+            <element signature="e#2268#8030#0" expanded="false" />
+            <element signature="e#10702#10979#0" expanded="false" />
+            <element signature="e#11023#13265#0" expanded="false" />
+            <element signature="e#11059#13261#0" expanded="false" />
+            <element signature="e#13268#13789#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -392,7 +457,13 @@
     <entry file="file://$PROJECT_DIR$/application/controllers/site.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="291" column="36" selection-start="9450" selection-end="9450" vertical-scroll-proportion="0.0" vertical-offset="3120" max-vertical-offset="3120">
-          <folding />
+          <folding>
+            <element signature="e#2268#8030#0" expanded="false" />
+            <element signature="e#10702#10979#0" expanded="false" />
+            <element signature="e#11023#13265#0" expanded="false" />
+            <element signature="e#11059#13261#0" expanded="false" />
+            <element signature="e#13268#13789#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -421,16 +492,6 @@
         <state line="4" column="19" selection-start="194" selection-end="194" vertical-scroll-proportion="0.08230453" vertical-offset="0" max-vertical-offset="729" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/location_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="0" selection-start="2914" selection-end="2914" vertical-scroll-proportion="-10.12" vertical-offset="4" max-vertical-offset="1845" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/clients_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="32" selection-start="1237" selection-end="1237" vertical-scroll-proportion="-2.54" vertical-offset="788" max-vertical-offset="4050" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="182" column="2" selection-start="6094" selection-end="6094" vertical-scroll-proportion="0.0" vertical-offset="2730" max-vertical-offset="5535">
@@ -448,20 +509,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/landing/landing-view.php">
+    <entry file="file://$PROJECT_DIR$/application/models/clients_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="31" selection-start="5537" selection-end="5537" vertical-scroll-proportion="-9.3" vertical-offset="2205" max-vertical-offset="6810">
+        <state line="114" column="40" selection-start="2074" selection-end="2074" vertical-scroll-proportion="0.27896994" vertical-offset="0" max-vertical-offset="699">
           <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#7;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#9;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#p#2;n#div#0;n#div#0;n#div#0;n#div#9;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#75#155#0" expanded="false" />
+            <element signature="n#__construct#0;n#Clients_model#0;n#!!top" expanded="false" />
+            <element signature="n#create_client#0;n#Clients_model#0;n#!!top" expanded="false" />
+            <element signature="e#429#843#0" expanded="false" />
+            <element signature="e#848#891#0" expanded="false" />
+            <element signature="e#848#919#0" expanded="false" />
+            <element signature="e#1014#1123#0" expanded="false" />
+            <element signature="e#1112#1123#0" expanded="false" />
+            <element signature="n#update_locations_lat#0;n#Clients_model#0;n#!!top" expanded="false" />
+            <element signature="e#1168#1213#0" expanded="false" />
+            <element signature="e#1168#1237#0" expanded="false" />
+            <element signature="e#1168#1271#0" expanded="false" />
+            <element signature="e#1307#1726#0" expanded="false" />
+            <element signature="e#1595#1643#0" expanded="false" />
+            <element signature="n#email_client#0;n#Clients_model#0;n#!!top" expanded="false" />
+            <element signature="e#1762#1805#0" expanded="false" />
+            <element signature="e#1762#1837#0" expanded="false" />
+            <element signature="e#1762#1869#0" expanded="false" />
+            <element signature="e#1964#2031#0" expanded="false" />
+            <element signature="e#2003#2031#0" expanded="false" />
+            <element signature="n#getCustomer#0;n#Clients_model#0;n#!!top" expanded="false" />
+            <element signature="e#2078#2121#0" expanded="false" />
+            <element signature="e#2078#2149#0" expanded="false" />
+            <element signature="e#2078#2173#0" expanded="false" />
+            <element signature="n#updateCount#0;n#Clients_model#0;n#!!top" expanded="false" />
+            <element signature="e#2377#2420#0" expanded="false" />
+            <element signature="e#2377#2448#0" expanded="false" />
+            <element signature="e#2543#2829#0" expanded="false" />
+            <element signature="e#2598#2829#0" expanded="false" />
+            <element signature="e#2608#2825#0" expanded="false" />
+            <element signature="e#2697#2737#0" expanded="false" />
+            <element signature="n#updateDate#0;n#Clients_model#0;n#!!top" expanded="false" />
+            <element signature="e#2867#2910#0" expanded="false" />
+            <element signature="e#2867#2938#0" expanded="false" />
+            <element signature="e#3033#3343#0" expanded="false" />
+            <element signature="e#3088#3343#0" expanded="false" />
+            <element signature="e#3098#3339#0" expanded="false" />
+            <element signature="e#3213#3251#0" expanded="false" />
+            <element signature="n#updatePrice#0;n#Clients_model#0;n#!!top" expanded="false" />
+            <element signature="e#3391#3443#0" expanded="false" />
+            <element signature="e#3391#3480#0" expanded="false" />
+            <element signature="e#3599#4014#0" expanded="false" />
+            <element signature="e#3675#4014#0" expanded="false" />
+            <element signature="e#3694#4004#0" expanded="false" />
+            <element signature="e#3816#3883#0" expanded="false" />
+            <element signature="n#unsubscribeEmail#0;n#Clients_model#0;n#!!top" expanded="false" />
+            <element signature="e#4067#4110#0" expanded="false" />
+            <element signature="e#4067#4138#0" expanded="false" />
+            <element signature="e#4067#4162#0" expanded="false" />
+            <element signature="e#4257#4540#0" expanded="false" />
+            <element signature="e#4312#4540#0" expanded="false" />
+            <element signature="e#4322#4536#0" expanded="false" />
+            <element signature="e#4374#4413#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/location_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="214" column="40" selection-start="4563" selection-end="4563" vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="720">
+          <folding>
+            <element signature="n#__construct#0;n#Location_model#0;n#!!top" expanded="false" />
+            <element signature="n#calc_distance#0;n#Location_model#0;n#!!top" expanded="false" />
+            <element signature="e#367#671#0" expanded="false" />
+            <element signature="n#distance_slc#0;n#Location_model#0;n#!!top" expanded="false" />
+            <element signature="n#getAjaxClosestLocations#0;n#Location_model#0;n#!!top" expanded="false" />
+            <element signature="e#1441#1472#0" expanded="false" />
+            <element signature="e#1572#1861#0" expanded="false" />
+            <element signature="e#1796#1856#0" expanded="false" />
+            <element signature="n#getAjaxLocationList#0;n#Location_model#0;n#!!top" expanded="false" />
+            <element signature="n#getAjaxLocation#0;n#Location_model#0;n#!!top" expanded="false" />
+            <element signature="e#2312#2362#0" expanded="false" />
+            <element signature="e#2312#2402#0" expanded="false" />
+            <element signature="e#2501#2604#0" expanded="false" />
+            <element signature="e#2544#2604#0" expanded="false" />
+            <element signature="n#getClosetLocation#0;n#Location_model#0;n#!!top" expanded="false" />
+            <element signature="e#2664#2709#0" expanded="false" />
+            <element signature="e#2782#4263#0" expanded="false" />
+            <element signature="e#3125#4051#0" expanded="false" />
+            <element signature="e#3557#4043#0" expanded="false" />
+            <element signature="e#4100#4149#0" expanded="false" />
+            <element signature="e#4100#4185#0" expanded="false" />
+            <element signature="n#updateLocation#0;n#Location_model#0;n#!!top" expanded="false" />
+            <element signature="e#4744#5690#0" expanded="false" />
+            <element signature="e#4782#5222#0" expanded="false" />
+            <element signature="e#5229#5690#0" expanded="false" />
+            <element signature="e#5248#5684#0" expanded="false" />
+            <element signature="e#5695#5741#0" expanded="false" />
+            <element signature="e#5695#5769#0" expanded="false" />
+            <element signature="e#5695#5808#0" expanded="false" />
+            <element signature="e#5907#6078#0" expanded="false" />
+            <element signature="e#5975#6078#0" expanded="false" />
+            <element signature="n#deleteLocation#0;n#Location_model#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/site.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="269" column="9" selection-start="8987" selection-end="8987" vertical-scroll-proportion="0.34334764" vertical-offset="3795" max-vertical-offset="6810">
+        <state line="258" column="0" selection-start="8307" selection-end="8307" vertical-scroll-proportion="-8.75" vertical-offset="1065" max-vertical-offset="2490">
+          <folding>
+            <element signature="e#2268#8030#0" expanded="false" />
+            <element signature="e#10702#10979#0" expanded="false" />
+            <element signature="e#11023#13265#0" expanded="false" />
+            <element signature="e#11059#13261#0" expanded="false" />
+            <element signature="e#13268#13789#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/landing/landing-view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="245" column="0" selection-start="6738" selection-end="6738" vertical-scroll-proportion="-1.7557603" vertical-offset="4437" max-vertical-offset="6810">
           <folding />
         </state>
       </provider>

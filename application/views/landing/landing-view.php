@@ -244,7 +244,7 @@
 							}
 							?>
 
-							<p><input type="radio" name="store_email" value="<?php echo $email_address; ?>">
+							<p><input type="radio" name="store_id" value="<?php echo $store['id']; ?>">
 								<a style="color: #BFD730; text-decoration: none;" href="<?php
 									if ((isset($store['map_link']) && (strlen($store['map_link']) > 0))) {
 
