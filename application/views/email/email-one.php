@@ -89,7 +89,7 @@
 							echo $panels;
 						}
 					?><br/>
-					<strong>Base Price*: </strong> <?php
+					<strong>Price From*: </strong> <?php
 						if ((isset($price) && (strlen($price) > 0))) {
 
 							echo $price;

@@ -164,7 +164,7 @@
 				</div>
 				<div class="row">
 					<div class="small-3 columns">
-						<label for="price" class="right inline">Base Price<sup>*</sup>:</label>
+						<label for="price" class="right inline">Price From<sup>*</sup>:</label>
 					</div>
 					<div class="small-9 columns">
 						<input type="text" name="price" id="price" placeholder="<?php echo $price; ?>"
