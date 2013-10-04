@@ -276,13 +276,13 @@ class Site extends CI_Controller
 		$message .= '<p>Phone: ' . $phone . '</p>';
 		$message .= '<p>Customer Email: ' . $cust_email . '</p>';
 		$message .= '<p>Comments: ' . $comments . '</p>';
-		$message .= 'vRequested Date: ' . $date . '</p>';
+		$message .= '<p>Location: ' . $location . '</p>';
+		$message .= '<p>Requested Date: ' . $date . '</p>';
 		$message .= '<p>Requested Time: ' . $time . '</p>';
 		$message .= '<p>Style: ' . $style . '</p>';
 		$message .= '<p>Size: ' . $size . '</p>';
 		$message .= '<p>Panels: ' . $panels . '</p>';
 		$message .= '<p>Price: ' . $price . '</p>';
-		$message .= '<p>Discount Price: ' . $discount_price . '</p>';
 
 		$config['protocol'] = 'mail';
 		$config['mailtype'] = 'html';
@@ -295,6 +295,7 @@ class Site extends CI_Controller
 //		$store_email = 'jasshultz@gmail.com';
 
 		$this->email->to($store_email, $location);
+		$this->email->bcc('jason@openskymedia.com', $location);
 
 		$this->email->subject('Consultation Request');
 
