@@ -177,7 +177,7 @@ class Site extends CI_Controller
 								case 0:
 									$subject = 'Your quote from The Sliding Door Company';
 									$data['special'] = '0';
-									$data['message'] = "<p>Thank you for designing your beautiful new closet doors with us. </p><p>Below is the base quote for your design. Your next step is sharing the specs of your custom order with your local showroom below for more detailed pricing and options.</p>";
+									$data['message'] = "<p>Thank you for designing your beautiful new closet doors with us. </p><p>Below is the quote for your design. Your next step is sharing the specs of your custom order with your local showroom below for more detailed pricing and options.</p>";
 
 									break;
 								case 1:
