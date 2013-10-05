@@ -108,13 +108,14 @@
 								</p>';
 
 				?>
+                <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/free-consultation.png"></a>
 
 			</div>
 		</td>
 		<td colspan="1" style="vertical-align: top;">
 			<div style="width:240px; padding: 1px 20px;">
 
-                <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/free-consultation.png"></a>
+
 
 				<?php if ($nolocation != '1') { ?>
 

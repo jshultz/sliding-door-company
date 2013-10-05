@@ -200,7 +200,7 @@ class Site extends CI_Controller
 										$data['message'] = "<p>We think you and your sliding doors were meant to be, so we're saving your doors at this price for 3 more days. After that, your quoted price will expire. Schedule a free consultation before time runs out!</p>";
 									} else {
                                         $place = array_shift(array_values($location));
-										$data['message'] = "<p>Paragraph should read: We think you and your sliding doors were meant to be, so we're saving your doors at this price for 3 more days. After that, your quoted price will expire. Schedule a free consultation before time runs out!</p>";
+										$data['message'] = "<p>We think you and your sliding doors were meant to be, so we're saving your doors at this price for 3 more days. After that, your quoted price will expire. Schedule a free consultation before time runs out!</p>";
 									}
 
 									break;
