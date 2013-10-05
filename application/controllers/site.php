@@ -177,7 +177,7 @@ class Site extends CI_Controller
 								case 0:
 									$subject = 'Your quote from The Sliding Door Company';
 									$data['special'] = '0';
-									$data['message'] = "<p>Thank you for designing your beautiful new closet doors with us. </p><p>Below is the base quote for your design. Your next step is sharing the specs of your custom order with your local showroom below for more detailed pricing and options.</p>";
+									$data['message'] = "<p>Thank you for designing your beautiful new closet doors with us. </p><p>Below is the quote for your design. Your next step is sharing the specs of your custom order with your local showroom below for more detailed pricing and options.</p>";
 
 									break;
 								case 1:
@@ -253,7 +253,16 @@ class Site extends CI_Controller
 		if (isset($_GET) || isset($_POST)) {
 
 			$store_email = $this->input->get_post('store_email', TRUE);
-			$location = $this->input->get_post('location', TRUE);
+			$store_id = $this->input->get_post('store_id', TRUE);
+
+			if ($store_id != '') {
+
+				$location =	$this->Location_model->getStore($store_id);
+
+			} else {
+				$location = $this->input->get_post('location', TRUE);
+			}
+
 			$fullname = $this->input->get_post('fullname', TRUE);
 			$zip = $this->input->get_post('zip', TRUE);
 			$phone = $this->input->get_post('phone', TRUE);
@@ -265,7 +274,6 @@ class Site extends CI_Controller
 			$size = $this->input->get_post('size', TRUE);
 			$panels = $this->input->get_post('panels', TRUE);
 			$price = $this->input->get_post('price', TRUE);
-			$discount_price = $this->input->get_post('discountprice', TRUE);
 			$nolocation = $this->input->get_post('nolocation', TRUE);
 		}
 
@@ -276,13 +284,13 @@ class Site extends CI_Controller
 		$message .= '<p>Phone: ' . $phone . '</p>';
 		$message .= '<p>Customer Email: ' . $cust_email . '</p>';
 		$message .= '<p>Comments: ' . $comments . '</p>';
-		$message .= 'vRequested Date: ' . $date . '</p>';
+		$message .= '<p>Location: ' . $location . '</p>';
+		$message .= '<p>Requested Date: ' . $date . '</p>';
 		$message .= '<p>Requested Time: ' . $time . '</p>';
 		$message .= '<p>Style: ' . $style . '</p>';
 		$message .= '<p>Size: ' . $size . '</p>';
 		$message .= '<p>Panels: ' . $panels . '</p>';
 		$message .= '<p>Price: ' . $price . '</p>';
-		$message .= '<p>Discount Price: ' . $discount_price . '</p>';
 
 		$config['protocol'] = 'mail';
 		$config['mailtype'] = 'html';
@@ -295,6 +303,7 @@ class Site extends CI_Controller
 //		$store_email = 'jasshultz@gmail.com';
 
 		$this->email->to($store_email, $location);
+		$this->email->bcc('jason@openskymedia.com', $location);
 
 		$this->email->subject('Consultation Request');
 

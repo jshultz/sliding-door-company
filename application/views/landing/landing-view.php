@@ -140,8 +140,10 @@
 						<label for="style" class="right inline">Style:</label>
 					</div>
 					<div class="small-9 columns">
-						<input type="text" name="style" id="style" placeholder='<?php echo $style; ?>'
-						       value='<?php echo $style; ?>' disabled>
+						<input type="hidden" name="style" id="style" placeholder='<?php echo $style; ?>'
+						       value='<?php echo $style; ?>'>
+						<input type="text"  id="style" placeholder='<?php echo $style; ?>'
+						       ' disabled>
 					</div>
 				</div>
 				<div class="row">
@@ -149,8 +151,10 @@
 						<label for="size" class="right inline">Size:</label>
 					</div>
 					<div class="small-9 columns">
-						<input type="text" name="size" id="size" placeholder="<?php echo $size; ?>"
-						       value="<?php echo $size; ?>" disabled>
+						<input type="hidden" name="size" id="size" placeholder="<?php echo $size; ?>"
+						       value="<?php echo $size; ?>">
+						<input type="text"  id="size" placeholder="<?php echo $size; ?>"
+						       " disabled>
 					</div>
 				</div>
 				<div class="row">
@@ -158,17 +162,21 @@
 						<label for="panels" class="right inline">Number of Panels:</label>
 					</div>
 					<div class="small-9 columns">
-						<input type="text" name="panels" id="panels" placeholder="<?php echo $panels; ?>"
-						       value="<?php echo $panels; ?>" disabled>
+						<input type="hidden" name="panels" id="panels" placeholder="<?php echo $panels; ?>"
+						       value="<?php echo $panels; ?>">
+						<input type="text"  id="panels" placeholder="<?php echo $panels; ?>"
+						       " disabled>
 					</div>
 				</div>
 				<div class="row">
 					<div class="small-3 columns">
-						<label for="price" class="right inline">Base Price<sup>*</sup>:</label>
+						<label for="price" class="right inline">Price From<sup>*</sup>:</label>
 					</div>
 					<div class="small-9 columns">
-						<input type="text" name="price" id="price" placeholder="<?php echo $price; ?>"
-						       value="<?php echo $price; ?>" disabled>
+						<input type="hidden" name="price" id="price" placeholder="<?php echo $price; ?>"
+						       value="<?php echo $price; ?>">
+						<input type="text"  id="price" placeholder="<?php echo $price; ?>"
+						       " disabled>
 					</div>
 				</div>
 
@@ -195,22 +203,7 @@
 
 						} ?>
 
-						<div class="row">
-							<div class="small-3 columns">
-								<label for="price" class="right inline">Discount Price<sup>*</sup>:</label>
-							</div>
-							<div class="small-9 columns">
-								<?php
-									setlocale(LC_MONETARY, 'en_US.UTF-8');
-									$discount_price = money_format('%.2n', $discount_price);
-								?>
-								<input type="text" name="discountprice" id="discount_price"
-								       placeholder="<?php echo $discount_price; ?>"
-								       value="<?php
-									       echo $discount_price;
-								       ?>" disabled>
-							</div>
-						</div>
+
 
 					<?php
 					}
@@ -251,7 +244,7 @@
 							}
 							?>
 
-							<p><input type="radio" name="store_email" value="<?php echo $email_address; ?>">
+							<p><input type="radio" name="store_id" value="<?php echo $store['id']; ?>">
 								<a style="color: #BFD730; text-decoration: none;" href="<?php
 									if ((isset($store['map_link']) && (strlen($store['map_link']) > 0))) {
 
@@ -265,14 +258,7 @@
 									?></a>
 
 							</p>
-							<a href="<?php
-								if ((isset($store['map_link']) && (strlen($store['map_link']) > 0))) {
-
-									echo $store['map_link'];
-								};?>">
-
-								<img border="0" width="150px"
-								     src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
+							
 
 
 							<p>
@@ -339,14 +325,7 @@
 							serving your area.
 
 						</p>
-						<a href="<?php
-							if ((isset($maplink) && (strlen($maplink) > 0))) {
-
-								echo $maplink;
-							};?>">
-
-							<img border="0" width="150px"
-							     src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
+						
 
 
 						<p>
@@ -390,7 +369,8 @@
 					<?php } ?>
 
 				<?php } else { ?>
-
+					<input type="hidden" name="store_email" value="<?php echo $store_email; ?>">
+					<input type="hidden" name="location" value="Phone Consultation">
 					<p>Your qualify for a telephone
 						consultation with our of our
 						experts! Simply schedule

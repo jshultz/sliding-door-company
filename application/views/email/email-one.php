@@ -89,7 +89,7 @@
 							echo $panels;
 						}
 					?><br/>
-					<strong>Base Price*: </strong> <?php
+					<strong>Price From*: </strong> <?php
 						if ((isset($price) && (strlen($price) > 0))) {
 
 							echo $price;
@@ -151,13 +151,7 @@
 								serving your area.
 
 							</p>
-							<a href="<?php
-								if ((isset($store['map_link']) && (strlen($store['map_link']) > 0))) {
-
-									echo $store['map_link'];
-								};?>">
-
-								<img border="0" width="150px" src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
+							
 
 
 							<p>
@@ -217,13 +211,7 @@
 							serving your area.
 
 						</p>
-						<a href="<?php
-							if ((isset($maplink) && (strlen($maplink) > 0))) {
-
-								echo $maplink;
-							};?>">
-
-							<img border="0" width="150px" src="<?php echo base_url(); ?>assets/images/email-one/Google-Maps-Logo.png"></a>
+						
 
 
 						<p>
