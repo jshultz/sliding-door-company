@@ -48,8 +48,10 @@ class Clients_model extends CI_Model {
 
 			$this->update_locations_lat();
 
-		} else {
+            return true;
 
+		} else {
+            return false;
 		}
 
 

@@ -64,6 +64,14 @@
 	//execute post
 	$result = curl_exec($ch);
 
+    if ($result == false) {
+        echo "success=" . urlencode("false");
+        return false;
+    } else {
+        echo "success=" . urlencode("true");
+        return true;
+    }
+
 	//close connection
 	curl_close($ch);
 

@@ -62,8 +62,13 @@ class Site extends CI_Controller
 			$lng = $pieces[1];
 
 			/* This is is the function in the model that inserts records into the database */
-			$this->Clients_model->create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng, $estimateStyle, $estimateSize, $estimatePanels, $cost);
+			$result = $this->Clients_model->create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng, $estimateStyle, $estimateSize, $estimatePanels, $cost);
 
+            if ($result == false) {
+                return false;
+            } else {
+                return true;
+            }
 		}
 
 	}
