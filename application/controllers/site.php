@@ -264,6 +264,7 @@ class Site extends CI_Controller
 			if ($store_id != '') {
 
 				$location =	$this->Location_model->getStore($store_id);
+				$store_email = $this->Location_model->getStoreEmail($store_id);
 
 			} else {
 				$location = $this->input->get_post('location', TRUE);
