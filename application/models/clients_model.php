@@ -97,7 +97,8 @@ class Clients_model extends CI_Model {
 			return null;
 
 		} else {
-			return $query;
+
+            return $query;
 		}
 
 	}

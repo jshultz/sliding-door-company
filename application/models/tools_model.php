@@ -39,7 +39,7 @@ class Tools_model extends CI_Model {
 
             $results = $this->db->insert('quotes', $data);
 
-            return $results;
+            echo $results;
 
         }
     }

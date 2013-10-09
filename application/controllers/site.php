@@ -30,8 +30,6 @@ class Site extends CI_Controller
 	/* This Does Nothing except prove the site can load */
 	public function index()
 	{
-        var_dump('hello');
-        exit();
 		$this->load->view('welcome_message');
 	}
 
@@ -131,9 +129,8 @@ class Site extends CI_Controller
 						$interval = $date2->diff($date1);
 						$timePassed = $interval->format('%R%a');
 
+
 						if (($lastSent == '0000-00-00') || ($timePassed > 7) || ($lastSent == NULL)) {
-
-
 
 							$mail = new PHPMailer;
 
@@ -233,7 +230,7 @@ class Site extends CI_Controller
 
 							$this->phpmailer->Body = $body;
 
-//							$this->phpmailer->Send();
+							$this->phpmailer->Send();
 
 							$this->Clients_model->updateCount($quoteid);
 
