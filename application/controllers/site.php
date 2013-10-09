@@ -30,6 +30,8 @@ class Site extends CI_Controller
 	/* This Does Nothing except prove the site can load */
 	public function index()
 	{
+        var_dump('hello');
+        exit();
 		$this->load->view('welcome_message');
 	}
 
@@ -111,6 +113,7 @@ class Site extends CI_Controller
 						$estimateSize = str_replace('\\"', '"', $x['estimateSize']);
 						$estimatePanels = $x['estimatePanels'];
 						$price = $x['cost'];
+                        $quoteid = $x['idquotes'];
 
 						$lat = $x['lat'];
 						$lng = $x['lng'];
@@ -211,6 +214,9 @@ class Site extends CI_Controller
 									break;
 							}
 
+                            echo $cust_email;
+
+
 							$body = $this->load->view('email/email-one', $data, TRUE);
 
 							$this->phpmailer->AddAddress($cust_email);
@@ -227,11 +233,9 @@ class Site extends CI_Controller
 
 							$this->phpmailer->Body = $body;
 
-							$this->phpmailer->Send();
+//							$this->phpmailer->Send();
 
-							$this->Clients_model->updateCount($cust_email);
-
-							$this->Clients_model->updateDate($cust_email);
+							$this->Clients_model->updateCount($quoteid);
 
 							$this->phpmailer->ClearAddresses();
 

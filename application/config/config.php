@@ -27,7 +27,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -181,7 +181,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 2;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -192,7 +192,7 @@ $config['log_threshold'] = 2;
 | application/logs/ folder. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '0';
+$config['log_path'] = '';
 
 /*
 |--------------------------------------------------------------------------

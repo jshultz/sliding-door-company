@@ -15,7 +15,7 @@ class Clients_model extends CI_Model {
 
 	function create_client($firstName, $lastName, $address, $state, $zip, $phone, $email, $source, $lat, $lng, $estimateStyle, $estimateSize, $estimatePanels, $cost) {
 
-		$data = array(
+		$dataClient = array(
 			'FirstName' => $firstName,
 			'LastName' => $lastName,
 			'Address' => $address,
@@ -23,14 +23,8 @@ class Clients_model extends CI_Model {
 			'Zip' => $zip,
 			'Phone' => $phone,
 			'Email' => $email,
-			'Source' => $source,
-			'lat' => $lat,
-			'lng' => $lng,
-			'estimateStyle' => $estimateStyle,
-			'estimateSize' => $estimateSize,
-			'estimatePanels' => $estimatePanels,
-			'cost'  => $cost,
-			'Key'   => random_string('alnum', 45)
+            'lat' => $lat,
+            'lng' => $lng
 		);
 
 		$this->db->select('*')
@@ -44,51 +38,44 @@ class Clients_model extends CI_Model {
 
 		if ($num < 1)
 		{
-			$this->db->insert('clients', $data);
+			$this->db->insert('clients', $dataClient);
 
-			$this->update_locations_lat();
+            $dataQuote = array(
+                'clientid' => $this->db->insert_id(),
+                'Source' => $source,
+                'estimateStyle' => $estimateStyle,
+                'estimateSize' => $estimateSize,
+                'estimatePanels' => $estimatePanels,
+                'cost'  => $cost,
+                'Key'   => random_string('alnum', 45)
+            );
+
+            $this->db->insert('quotes', $dataQuote);
 
             return true;
 
 		} else {
-            return false;
+
+            foreach ($query->result() as $row)
+            {
+                $clientid = $row->idclients;
+            }
+
+            $dataQuote = array(
+                'clientid' => $clientid,
+                'Source' => $source,
+                'estimateStyle' => $estimateStyle,
+                'estimateSize' => $estimateSize,
+                'estimatePanels' => $estimatePanels,
+                'cost'  => $cost,
+                'Key'   => random_string('alnum', 45)
+            );
+
+            $this->db->insert('quotes', $dataQuote);
+
+            return true;
 		}
 
-
-	}
-
-	function update_locations_lat() {
-
-		$this->db->select('*')
-			->from('locations')
-			->where('lat', NULL)
-            ->or_where('lat', '');
-
-			$query = $this->db->get();
-
-		foreach ($query->result() as $row)
-		{
-			$address =  $row->address;
-			$city = $row->city;
-			$zip =  $row->zip;
-			$id = $row->id;
-
-			$latlng  = $this->geocodeit->geocode($address,$city,$zip);
-			$pieces = explode(",", $latlng);
-			$lat = $pieces[0];
-			$lng = $pieces[1];
-
-			$data = array(
-				'lat' => $lat,
-				'lng' => $lng
-			);
-
-			$this->db->where('id', $id);
-			$this->db->update('locations', $data);
-
-
-
-		}
 
 	}
 
@@ -96,8 +83,9 @@ class Clients_model extends CI_Model {
 
 		$this->db->select('*')
 			->from('clients')
-			->where('Unsubscribed', '0')
-			->where('EmailLevel <', '3');
+            ->join('quotes','quotes.clientid = clients.idclients')
+			->where('quotes.Unsubscribed', '0')
+			->where('quotes.EmailLevel <', '3');
 
 		$query = $this->db->get();
 
@@ -136,12 +124,10 @@ class Clients_model extends CI_Model {
 
 	}
 
-
-
-	function updateCount($email) {
+	function updateCount($quoteid) {
 		$this->db->select('*')
-			->from('clients')
-			->where('Email', $email);
+			->from('quotes')
+			->where('idquotes', $quoteid);
 
 		$query = $this->db->get();
 
@@ -157,22 +143,24 @@ class Clients_model extends CI_Model {
 			{
 
 				$level = $row->EmailLevel + 1;
+                $today = date("Y-m-d");
 
 				$data = array(
-					'EmailLevel' => $level
+					'EmailLevel' => $level,
+                    'lastSent' => $today
 				);
 
-				$this->db->where('Email', $email);
-				$this->db->update('clients', $data);
+				$this->db->where('idquotes', $quoteid);
+				$this->db->update('quotes', $data);
 
 			}
 		}
 	}
 
-	function updateDate($email) {
+	function updateDate($quoteid) {
 		$this->db->select('*')
-			->from('clients')
-			->where('Email', $email);
+			->from('quotes')
+			->where('idquotes', $quoteid);
 
 		$query = $this->db->get();
 
@@ -195,8 +183,8 @@ class Clients_model extends CI_Model {
 					'lastSent' => $today
 				);
 
-				$this->db->where('Email', $email);
-				$this->db->update('clients', $data);
+				$this->db->where('idquotes', $quoteid);
+				$this->db->update('quotes', $data);
 
 			}
 		}
@@ -235,8 +223,7 @@ class Clients_model extends CI_Model {
 
 	function unsubscribeEmail($email, $Key) {
 		$this->db->select('*')
-			->from('clients')
-			->where('Email', $email)
+			->from('quotes')
 			->where('Key', $Key);
 
 		$query = $this->db->get();
@@ -255,9 +242,8 @@ class Clients_model extends CI_Model {
 					'Unsubscribed' => '1'
 				);
 
-				$this->db->where('Email', $email);
 				$this->db->where('Key', $Key);
-				$this->db->update('clients', $data);
+				$this->db->update('quotes', $data);
 
 			}
 		}
