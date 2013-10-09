@@ -354,6 +354,7 @@ class Site extends CI_Controller
 
 			$customer = $this->Clients_model->getCustomer($email, $Key);
 
+
 			foreach ($customer->result_array() as $x) {
 
 				$firstName = $x['FirstName'];
@@ -394,6 +395,8 @@ class Site extends CI_Controller
 			$data['size'] = $estimateSize;
 			$data['panels'] = $estimatePanels;
 			$data['price'] = $price;
+
+
 
 			$location = $this->Location_model->getClosetLocation($lat, $lng, $zip);
 

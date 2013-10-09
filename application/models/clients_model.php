@@ -107,8 +107,8 @@ class Clients_model extends CI_Model {
 
 		$this->db->select('*')
 			->from('clients')
-			->where('email', $email)
-			->where('key', $key);
+			->join('quotes','quotes.clientid = clients.idclients')
+			->where('quotes.Key', $key);
 
 		$query = $this->db->get();
 

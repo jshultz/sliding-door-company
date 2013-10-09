@@ -25,21 +25,12 @@ class Tools_model extends CI_Model {
         {
             
             $data = array(
-                'clientid' =>  $row->idclients,
-                'Source' => $row->Source,
-                'EmailLevel' =>  $row->EmailLevel,
-                'lastSent' => $row->lastSent,
-                'Created' => $row->Created,
-                'Unsubscribed' => $row->Unsubscribed,
-                'estimateStyle' => $row->estimateStyle,
-                'estimateSize' => $row->estimateSize,
-                'estimatePanels' => $row->estimatePanels,
-                'cost' => $row->cost
+	            'Key' => $row->Key
             );
 
-            $results = $this->db->insert('quotes', $data);
-
-            echo $results;
+	        if ($row->Key == '') {
+		        $this->db->update('quotes', $data);
+	        }
 
         }
     }
