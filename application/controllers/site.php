@@ -56,7 +56,7 @@ class Site extends CI_Controller
 			$cost = $this->input->get_post('cost', TRUE);
 			$city = '';
 
-			$latlng = $this->geocodeit->geocode($address, $city, $zip);
+			$latlng = $this->geocodeit->geocode($address, $zip, $city);
 			$pieces = explode(",", $latlng);
 			$lat = $pieces[0];
 			$lng = $pieces[1];
