@@ -32,6 +32,7 @@
 
 <div class="large-6 columns large-offset-3">
 <form action="<?php echo base_url(); ?>site/email_store">
+<input type="hidden" name="key" value="<?php echo $key; ?>">
 <input type="hidden" name="nolocation" value="<?php echo $nolocation; ?>">
 
 <div class="row">
