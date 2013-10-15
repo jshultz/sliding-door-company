@@ -27,8 +27,12 @@ class Tools_model extends CI_Model {
             $data = array(
 	            'Key' => $row->Key
             );
+	        var_dump($row);
 
-	        if ($row->Key == '') {
+	        if ($row->Key != NULL) {
+
+		        $this->db->where('clientid', $row->idclients);
+		        $this->db->where('key', NULL);
 		        $this->db->update('quotes', $data);
 	        }
 
