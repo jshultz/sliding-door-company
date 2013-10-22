@@ -68,7 +68,7 @@
 		<td colspan="1" style="vertical-align: top;">
 			<div style="width:240px; padding: 0 20px; float: left">
 
-				<h3 style="text-decoration: underline">Your Quote</h3>
+				<h3>You Closet Doors</h3>
 
 				<p>
 					<strong>Style: </strong> <?php
@@ -105,12 +105,7 @@
 				</p>
 				<?php
 
-					echo '<p>
-									Get started by sharing your
-									custom specs with
-									your local showroom for detailed
-									pricing and options.
-								</p>';
+
 
 				?>
                 <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/showroom.png"></a>
