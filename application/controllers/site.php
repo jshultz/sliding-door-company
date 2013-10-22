@@ -230,9 +230,6 @@ class Site extends CI_Controller
                             $this->phpmailer->Subject = $subject;
 
                             $this->phpmailer->Body = $body;
-
-                            var_dump($body);
-                            exit;
                             
                             $this->phpmailer->Send();
 
