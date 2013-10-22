@@ -182,7 +182,7 @@ class Site extends CI_Controller
                                 case 0:
                                     $subject = 'Your quote from The Sliding Door Company';
                                     $data['special'] = '0';
-                                    $data['message'] = "<p style='color: green'><strong>Thank you for requesting a quote from us!</strong> </p>";
+                                    $data['message'] = "<p style='color: #BFD730'><strong>Thank you for requesting a quote from us!</strong> </p>";
                                     $data['message'] .= "<p>Below is a price range for closet doors based upon your specifications. In order to better assist you, we recommend discussing your project with one of our closet door specialists as final pricing may vary. </p>";
 									$data['message'] .= "<p>We're here to help. If you would like to receive more information, feel free to call us or request a one-on-one consultation at your nearest showroom. We respect your privacy and will not contact you without your permission.</p>";
 
