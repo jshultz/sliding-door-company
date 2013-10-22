@@ -181,37 +181,6 @@
 					</div>
 				</div>
 
-				<?php
-					if ($special == '1') {
-
-						$dollar = $price;
-						$dollar = str_replace("$", "", $dollar);
-						$dollar = str_replace(",", "", $dollar);
-						$dollar = str_replace(".", "", $dollar);
-
-						if ($dollar <= 1000) {
-							$discount_price = $dollar - ($dollar * .10);
-
-						}
-
-						if (($dollar > 1000) && ($dollar <= 2000)) {
-							$discount_price = $dollar - ($dollar * .15);
-
-						}
-
-						if ($dollar > 2000) {
-							$discount_price = $dollar - ($dollar * .20);
-
-						} ?>
-
-
-
-					<?php
-					}
-
-
-				?>
-
 			</div>
 		</div>
 

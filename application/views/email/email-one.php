@@ -89,10 +89,15 @@
 							echo $panels;
 						}
 					?><br/>
-					<strong>Price From*: </strong> <?php
+					<strong>Price Range*: </strong> <?php
 						if ((isset($price) && (strlen($price) > 0))) {
 
-							echo $price;
+                            $number = preg_replace("/[^0-9.]/", '', $price);
+
+                            $newprice = $number * 1.25;
+
+
+							echo $price . ' &mdash; $' . $newprice;
 						}
 					?><br/>
 
@@ -108,7 +113,9 @@
 								</p>';
 
 				?>
-                <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/free-consultation.png"></a>
+                <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/showroom.png"></a>
+
+                <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/specialist.png"></a>
 
 			</div>
 		</td>
