@@ -110,9 +110,9 @@
 				?>
 
 
-                <?php echo '<a alt="Contact A Specialist" href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/specialist.png"></a>
+                <?php echo '<a alt="Contact A Specialist" href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img alt="Contact A Specialist" href=" src="<?php echo base_url(); ?>assets/images/email-one/specialist.png"></a>
 
-                <?php echo '<a alt="Visit A Showroom" href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/showroom.png"></a>
+                <?php echo '<a alt="Visit A Showroom" href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img alt="Visit A Showroom" src="<?php echo base_url(); ?>assets/images/email-one/showroom.png"></a>
 
 			</div>
 		</td>
