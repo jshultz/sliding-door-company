@@ -36,7 +36,7 @@
 	</tr>
 	<tr>
 		<td colspan="1">
-			<img alt="Sliding Door Company" src="<?php echo base_url(); ?>assets/images/email-one/DYO_email-v3-1_10.jpg" width="243" height="123" alt="">
+			<img alt="The Sliding Door Company" src="<?php echo base_url(); ?>assets/images/email-one/DYO_email-v3-1_10.jpg" width="243" height="123" alt="">
 		</td>
 		<td colspan="1" style="text-align: right; vertical-align: middle;">
 
@@ -49,7 +49,7 @@
 				<?php
 					if ((isset($firstname) && (strlen($firstname) > 0))) {
 
-						echo '<p>' . $firstname . '</p>';
+						echo '<p>' . $firstname . ',</p>';
 					}
 				?>
 
