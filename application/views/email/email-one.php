@@ -36,7 +36,7 @@
 	</tr>
 	<tr>
 		<td colspan="1">
-			<img src="<?php echo base_url(); ?>assets/images/email-one/DYO_email-v3-1_10.jpg" width="243" height="123" alt="">
+			<img alt="Sliding Door Company" src="<?php echo base_url(); ?>assets/images/email-one/DYO_email-v3-1_10.jpg" width="243" height="123" alt="">
 		</td>
 		<td colspan="1" style="text-align: right; vertical-align: middle;">
 
@@ -110,9 +110,9 @@
 				?>
 
 
-                <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/specialist.png"></a>
+                <?php echo '<a alt="Contact A Specialist" href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/specialist.png"></a>
 
-                <?php echo '<a href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/showroom.png"></a>
+                <?php echo '<a alt="Visit A Showroom" href="'  . base_url() . 'site/consultation?email=' . $cust_email . '&key=' . $key . '">' ?><img src="<?php echo base_url(); ?>assets/images/email-one/showroom.png"></a>
 
 			</div>
 		</td>
