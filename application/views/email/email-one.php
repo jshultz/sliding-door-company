@@ -68,7 +68,7 @@
 		<td colspan="1" style="vertical-align: top;">
 			<div style="width:240px; padding: 0 20px; float: left">
 
-				<h3>You Closet Doors</h3>
+				<h3>Your Closet Doors</h3>
 
 				<p>
 					<strong>Style: </strong> <?php
